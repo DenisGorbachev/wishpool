@@ -1,0 +1,166 @@
+template(name="index")
+  main#top.masthead(role='main')
+    .container
+      h1.logo
+        a(href='/')
+          | WISHBAR
+      h1
+        | The Most
+        span(data-typer-targets='Easy,Effective,Advanced,Secure,Friendly,Simple') Simple
+        | and
+        strong Powerful Way
+        br
+        | to
+        strong launch
+        | your startup
+      .row
+        .col-md-6.col-sm-12.col-md-offset-3.subscribe
+          form#subscribeForm.form-horizontal(role='form', action='subscribe.php', method='POST')
+            .form-group
+              .col-md-7.col-sm-6.col-sm-offset-1.col-md-offset-0
+                input#address.form-control.input-lg(name='email', type='email', placeholder='Enter your email', data-validate='validate(required, email)', required='required')
+              .col-md-5.col-sm-4
+                button.btn.btn-success.btn-lg(type='submit') GET EARLY ACCESS
+          span#result.alertMsg
+      a.scrollto(href='#explore')
+        p SCROLL DOWN TO EXPLORE
+        p.scrollto--arrow
+          img(src='images/scroll_down.png', alt='scroll down arrow')
+  #explore.container
+    .section-title
+      h2 Responsive landing page for startup
+      h4 Simple, elegant and intutive user interface
+    section.row.heroimg.breath
+      .col-md-12.text-center
+        img(src='images/flat-mockup-template.png', alt='flat-mockup-template')
+    .section-title
+      h2 Some great features of our startup
+      h4 With our advanced features, you'll fall in love with
+    section.row.features
+      .col-sm-6.col-md-3
+        .thumbnail
+          img(src='images/flat-feature-icon-1.png', alt='analytics-icon')
+          .caption
+            h3 Advanced analytics
+            p Browse and analyze detailed statistics of each of your keywords and phrases.
+      .col-sm-6.col-md-3
+        .thumbnail
+          img(src='images/flat-feature-icon-2.png', alt='analytics-icon')
+          .caption
+            h3 Spy Competitors
+            p
+              | Ever wondered what your competitors are up to? no more with our Spy Competitors.
+      .col-sm-6.col-md-3
+        .thumbnail
+          img(src='images/flat-feature-icon-3.png', alt='analytics-icon')
+          .caption
+            h3 Work with mac
+            p You can even work on your mac with our Mac application and stay synced online.
+      .col-sm-6.col-md-3
+        .thumbnail
+          img(src='images/flat-feature-icon-4.png', alt='analytics-icon')
+          .caption
+            h3 Dedicated support
+            p
+              | Talk to human. when ever you need a help or want to talk with us, we are open 24/7.
+    .section-title
+      h2 You are in a good company
+      h4 We are funded with world's trusted brands.
+    section.row.clientlogo.breath
+      .col-md-12.text-center
+        img(src='images/client-logos.png', alt='client-logos')
+  .highlight.testimonials
+    .container
+      .section-title
+        h2 What our customers said
+        h4 Don't take our word. See our testimonials
+      section.row.breath
+        .col-md-6
+          .testblock
+            | Startup is really a great template to get strarted with. With its awesome features and easy customization with unbounce. This template made my day. Very recommended.
+          .clientblock
+            img(src='images/customer-img-1.jpg', alt='.')
+            p
+              strong Johnathan Doe
+              br
+              | Founder and CEO of
+              a(href='#') Square Inc
+        .col-md-6
+          .testblock
+            | I like this template very much. easy customization and perfect support. This is the finest startup template I've ever seen. Its minimal, Flat and responsive too. I'm really happy with their service.
+          .clientblock
+            img(src='images/customer-img-2.jpg', alt='.')
+            p
+              strong Michael Slats
+              br
+              | Project Lead at
+              a(href='#') Airbnb.com
+  .container
+    .section-title
+      h2 Honest pricing. No surprises.
+      h4 No contract. No risk. No credit card required.
+    section.row.breath.planpricing
+      .col-md-4
+        .pricing.color1
+          .planname Personal
+          .price
+            span.curr $
+            | 14
+            span.per /MO
+          .billing Billed Annually
+      .col-md-4
+        .pricing.color2
+          .planname Agency
+          .price
+            span.curr $
+            | 49
+            span.per /MO
+          .billing Billed Annually
+      .col-md-4
+        .pricing.color3
+          .planname Enterprise
+          .price
+            span.curr $
+            | 99
+            span.per /MO
+          .billing Billed Annually
+    .section-title
+      h5 Frequently Asked Questions
+    section.row.faq.breath
+      .col-md-6
+        h6 How does the free trial work?
+        p
+          | Our 10 day trial is 100% free and does not require credit card information to start. If at the end of your trial you would like to upgrade, great. If not, you can cancel your account altogether, or let us mark it as inactive for you to come back to later.
+        h6 Can I switch plans later?
+        p
+          | Absolutely. You can switch between our paid plans, or cancel your account altogether, whenever you like. We will adjust any payments accordingly.
+      .col-md-6
+        h6 Do I need to choose a plan now?
+        p
+          | No. You get the full featured, unlimited version of Startup completely free for 10 days. Once you're ready to upgrade, you may choose a plan which suits your needs.
+        h6 What payment types do you accept?
+        p
+          | We accept payments from MasterCard, Visa, Visa Debit and American Express. We do not accept PayPal. Remember, you do not need to supply card details to start your free trial.
+  main.footercta(role='main')
+    .container
+      h1
+        | The Most Simple & Yet
+        strong Powerful Way
+        br
+        | to
+        strong launch
+        | your startup
+      .row
+        .col-md-12.breath.text-center
+          a.btn.btn-success.btn-lg.gototop(href='#top') GET EARLY ACCESS
+  .container
+    section.row.breath
+      .col-md-12.footerlinks
+        a(href='#') About
+        a(href='#') Pricing
+        a(href='blog.html') Blog
+        a(href='#') Help
+        a(href='#') Contact
+        a(href='#') Privacy
+        a(href='#') Terms
+        p © 2014 Startup. All Rights Reserved

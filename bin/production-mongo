@@ -1,0 +1,11 @@
+#!/bin/bash
+
+DIRNAME=$(cd `dirname $0` && pwd)
+USERNAME=$(<~/.meteor/wishbar.com.username)
+PASSWORD=$(<~/.meteor/wishbar.com.password)
+HOST="proximus.modulusmongo.net"
+PORT="27017"
+DB="Y2petuqe"
+OUT_DIR="/tmp"
+
+mongo -u $USERNAME -p $PASSWORD $HOST:$PORT/$DB
