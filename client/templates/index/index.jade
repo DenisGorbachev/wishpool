@@ -7,16 +7,13 @@ template(name="index")
           | WISHBAR
       h2
         | Instant Customer
+        br(class="visible-xs")
         span.typed
       .row
         .col-md-6.col-sm-12.col-md-offset-3.subscribe
-          form.form-horizontal(role='form', action='subscribe.php', method='POST')
-            .form-group
-              .col-md-12
-                button.btn.btn-success.btn-large(type='submit') Login with Google
-          span#result.alertMsg
-      a.scrollto(href='#explore')
-        p SCROLL TO LEARN MORE
+          button.btn.btn-success.btn-large.login-with-google(type='submit') Sign in with Google
+    a.scrollto(href='#explore')
+      p SCROLL TO LEARN MORE
   #explore.container
     .section-title
       h2 Responsive landing page for startup
@@ -134,16 +131,11 @@ template(name="index")
           | We accept payments from MasterCard, Visa, Visa Debit and American Express. We do not accept PayPal. Remember, you do not need to supply card details to start your free trial.
   main.footercta(role='main')
     .container
-      h1
-        | The Most Simple & Yet
-        strong Powerful Way
-        br
-        | to
-        strong launch
-        | your startup
+      h2
+        | Get More Customer Feedback
       .row
-        .col-md-12.breath.text-center
-          a.btn.btn-success.btn-lg.gototop(href='#top') GET EARLY ACCESS
+        .col-md-12.text-center
+          button.btn.btn-success.btn-large.login-with-google(type='submit') Sign in with Google
   .container
     section.row.breath
       .col-md-12.footerlinks

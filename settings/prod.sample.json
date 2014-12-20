@@ -1,0 +1,25 @@
+{
+  "baseUrl": "https://wishbar.meteor.com",
+  "google": {
+    "secret": ""
+  },
+  "apm": {
+    "appId": "",
+    "secret": ""
+  },
+  "public": {
+    "version": "__VERSION__",
+    "isDebug": false,
+    "google": {
+      "clientId": ""
+    },
+    "ga": {
+      "property": "",
+      "disabled": true
+    },
+    "mixpanel": {
+      "token": "",
+      "disabled": false
+    }
+  }
+}

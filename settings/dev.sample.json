@@ -1,0 +1,27 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "google": {
+    "secret": ""
+  },
+  "apm": {
+    "appId": "__disabled_for_dev__",
+    "secret": "__disabled_for_dev__"
+  },
+  "public": {
+    "isDebug": true,
+    "facebook": {
+      "appId": ""
+    },
+    "google": {
+      "clientId": ""
+    },
+    "ga": {
+      "property": "",
+      "disabled": true
+    },
+    "mixpanel": {
+      "token": "",
+      "disabled": true
+    }
+  }
+}

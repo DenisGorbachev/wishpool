@@ -1,5 +1,9 @@
-main
+.btn.login-with-google
+  font-weight bold
+
+.masthead
   height 100vh
+  padding 0 !important
   .container
     position: relative;
     top 50%
@@ -9,3 +13,33 @@ main
     color #FFFFFF
     &:hover
       color #FFFFFF
+  .scrollto
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    &:hover
+      text-decoration underline
+
+@media (max-width: 480px)
+  .masthead
+    h1 a
+      font-size 52px
+
+/**
+ * iPad with portrait orientation.
+ */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+  .masthead {
+    height: 1024px;
+  }
+}
+
+/**
+ * iPad with landscape orientation.
+ */
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape) {
+  .masthead {
+    height: 768px;
+  }
+}
