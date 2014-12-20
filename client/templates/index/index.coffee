@@ -4,7 +4,7 @@ Template.index.helpers
 Template.index.rendered = ->
   $(".masthead").height($(window).height())
   @$(".typed").typed(
-    strings: ["Feedback", "Opinions", "Remarks", "Ideas"]
+    strings: ["Desires", "Thoughts", "Mind", "Soul"]
     startDelay: 0
     backDelay: 2500
     typeSpeed: 70
