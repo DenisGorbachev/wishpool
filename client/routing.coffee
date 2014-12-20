@@ -6,8 +6,6 @@ Router.configure
 Router.map ->
   @route "index",
     path: "/"
-    onAfterAction: ->
-      share.setPageTitle("Priest, free online converter and formatter", false)
   @route "convert",
     path: "/convert/:slug"
     template: "convert"
@@ -15,17 +13,16 @@ Router.map ->
       {
         tool: share.Tools.findOne({slug: @params.slug})
       }
-    action: ->
-      @render(@data().tool.template)
-  @route "futurizator",
-    path: "/futurizator-batch-convert"
 
-share.setPageTitle = (title, appendSiteName = true) ->
-  if appendSiteName
-    title += " - Priest"
-  if Meteor.settings.public.isDebug
-    title = "(D) " + title
-  document.title = title
+Router.onAfterAction ->
+  share.setPageTitle("Wishbar = Instant customer feedback with ♥", false)
 
 Router.onAfterAction ->
   share.debouncedSendPageview()
+
+share.setPageTitle = (title, appendSiteName = true) ->
+  if appendSiteName
+    title += " - Wishbar"
+  if Meteor.settings.public.isDebug
+    title = "(D) " + title
+  document.title = title

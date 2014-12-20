@@ -1,31 +1,22 @@
 template(name="index")
-  main#top.masthead(role='main')
+  main#top.masthead.color1(role='main')
     .container
       h1.logo
         a(href='/')
+
           | WISHBAR
-      h1
-        | The Most
-        span(data-typer-targets='Easy,Effective,Advanced,Secure,Friendly,Simple') Simple
-        | and
-        strong Powerful Way
-        br
-        | to
-        strong launch
-        | your startup
+      h2
+        | Instant Customer
+        span.typed
       .row
         .col-md-6.col-sm-12.col-md-offset-3.subscribe
-          form#subscribeForm.form-horizontal(role='form', action='subscribe.php', method='POST')
+          form.form-horizontal(role='form', action='subscribe.php', method='POST')
             .form-group
-              .col-md-7.col-sm-6.col-sm-offset-1.col-md-offset-0
-                input#address.form-control.input-lg(name='email', type='email', placeholder='Enter your email', data-validate='validate(required, email)', required='required')
-              .col-md-5.col-sm-4
-                button.btn.btn-success.btn-lg(type='submit') GET EARLY ACCESS
+              .col-md-12
+                button.btn.btn-success.btn-large(type='submit') Login with Google
           span#result.alertMsg
       a.scrollto(href='#explore')
-        p SCROLL DOWN TO EXPLORE
-        p.scrollto--arrow
-          img(src='images/scroll_down.png', alt='scroll down arrow')
+        p SCROLL TO LEARN MORE
   #explore.container
     .section-title
       h2 Responsive landing page for startup

@@ -2,7 +2,14 @@ Template.index.helpers
 #  helper: ->
 
 Template.index.rendered = ->
-  @$('[data-typer-targets]').typer()
+  @$(".typed").typed(
+    strings: ["Feedback", "Opinions", "Remarks", "Ideas"]
+    startDelay: 0
+    backDelay: 2500
+    typeSpeed: 70
+    backSpeed: 10
+    loop: true
+  )
 
 Template.index.events
   "click .scrollto, click .gototop": (event, template) ->

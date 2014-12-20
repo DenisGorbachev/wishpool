@@ -174,7 +174,7 @@ a:hover, a:focus {
     background-size: cover;
 }
 
-.masthead .container {
+.masthead .container h1 {
     animation: fadein 2s;
     -moz-animation: fadein 2s;
     -webkit-animation: fadein 2s;
