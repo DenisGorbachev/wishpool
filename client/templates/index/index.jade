@@ -3,10 +3,9 @@ template(name="index")
     .container
       h1.logo
         a(href='/')
-
-          | WISHBAR
+          | WISHPOOL
       h2
-        | Read Customer
+        | Look Into Customer
         br(class="visible-xs")
         span.typed
       .row
@@ -16,13 +15,7 @@ template(name="index")
       p SCROLL TO LEARN MORE
   #explore.container
     .section-title
-      h2 Responsive landing page for startup
-      h4 Simple, elegant and intutive user interface
-    section.row.heroimg.breath
-      .col-md-12.text-center
-        img(src='images/flat-mockup-template.png', alt='flat-mockup-template')
-    .section-title
-      h2 Some great features of our startup
+      h2 Benefits
       h4 With our advanced features, you'll fall in love with
     section.row.features
       .col-sm-6.col-md-3
@@ -60,8 +53,8 @@ template(name="index")
   .highlight.testimonials
     .container
       .section-title
-        h2 What our customers said
-        h4 Don't take our word. See our testimonials
+        h2 Testimonials we are aiming for
+        h4 These aren't real, but hey, can we dream?
       section.row.breath
         .col-md-6
           .testblock
@@ -85,34 +78,25 @@ template(name="index")
               a(href='#') Airbnb.com
   .container
     .section-title
-      h2 Honest pricing. No surprises.
-      h4 No contract. No risk. No credit card required.
+      h2 Brutally affordable
+      h4 Shockingly inexpensive
     section.row.breath.planpricing
-      .col-md-4
+      .col-md-4.col-md-offset-4
         .pricing.color1
-          .planname Personal
           .price
             span.curr $
-            | 14
+            | 7
             span.per /MO
           .billing Billed Annually
-      .col-md-4
-        .pricing.color2
-          .planname Agency
-          .price
-            span.curr $
-            | 49
-            span.per /MO
-          .billing Billed Annually
-      .col-md-4
-        .pricing.color3
-          .planname Enterprise
-          .price
-            span.curr $
-            | 99
-            span.per /MO
-          .billing Billed Annually
-    .section-title
+    section.row
+      .col-md-4.col-md-offset-4.text-center
+        h4 Other feedback tools
+    section.row
+      .col-md-2.col-md-offset-4.text-center.competitor-pricing
+        | Qualaroo: $63/mo
+      .col-md-2.text-center.competitor-pricing
+        | Intercom: $59/mo
+  .section-title
       h5 Frequently Asked Questions
     section.row.faq.breath
       .col-md-6
@@ -146,4 +130,4 @@ template(name="index")
         //a(href='#') Contact
         //a(href='#') Privacy
         //a(href='#') Terms
-        p © 2014 Wishbar. All Rights Reserved
+        p © 2014 Wishpool. All Rights Reserved
