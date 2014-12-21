@@ -15,45 +15,53 @@ template(name="index")
       p SCROLL TO LEARN MORE
   #explore.container
     .section-title
-      h2 Benefits
-      h4 With our advanced features, you'll fall in love with
-    section.row.features
-      .col-sm-6.col-md-3
-        .thumbnail
-          img(src='images/flat-feature-icon-1.png', alt='analytics-icon')
-          .caption
-            h3 Advanced analytics
-            p Browse and analyze detailed statistics of each of your keywords and phrases.
-      .col-sm-6.col-md-3
-        .thumbnail
-          img(src='images/flat-feature-icon-2.png', alt='analytics-icon')
-          .caption
-            h3 Spy Competitors
-            p
-              | Ever wondered what your competitors are up to? no more with our Spy Competitors.
-      .col-sm-6.col-md-3
-        .thumbnail
-          img(src='images/flat-feature-icon-3.png', alt='analytics-icon')
-          .caption
-            h3 Work with mac
-            p You can even work on your mac with our Mac application and stay synced online.
-      .col-sm-6.col-md-3
-        .thumbnail
-          img(src='images/flat-feature-icon-4.png', alt='analytics-icon')
-          .caption
-            h3 Dedicated support
-            p
-              | Talk to human. when ever you need a help or want to talk with us, we are open 24/7.
+      h2 Grant Customer Wishes
+      h4 Hear them with instant feedback widget
+    section.row
+      .col-xs-12.text-center
+        button.btn.btn-success.btn-large.login-with-google(type='submit') Install On Your Site
     .section-title
-      h2 You are in a good company
-      h4 We are funded with world's trusted brands.
-    section.row.clientlogo.breath
-      .col-md-12.text-center
-        img(src='images/client-logos.png', alt='client-logos')
+      h2 Marvelous Benefits
+    section.row.features
+      .col-sm-6.col-md-4
+        .thumbnail
+          img(src='images/diamond.png')
+          .caption
+            h3 Outsmart competitors
+            p Get a leading edge by capturing feedback that is "too small to mention".
+      .col-sm-6.col-md-4
+        .thumbnail
+          img(src='images/target.png')
+          .caption
+            h3 Answer the IPO question
+            p
+              | If your customers had a magic wand, what would they wish for?
+      .col-sm-12.col-md-4
+        .thumbnail
+          img(src='images/woman.png')
+          .caption
+            h3 Bask in user love
+            p "One day I wished for a unicorn. The other day I logged in, and ..."
+    .section-title
+      h2 Wonderful Price
+    section.row.breath.planpricing
+      .col-md-4.col-md-offset-4
+        .pricing.color1
+          .price
+            | FREE
+          .billing For 20 wishes per week
+          .billing $3/mo for unlimited wishes
+          .zephyr
+            .billing Easy install
+            .billing Analytics
+            .billing A/B testing
+            .billing Capture unsent feedback
+          .zephyr
+            button.btn.btn-success.btn-large.login-with-google(type='submit') Sign in with Google
   .highlight.testimonials
     .container
       .section-title
-        h2 Testimonials we are aiming for
+        h2 Imaginary Testimonials
         h4 These aren't real, but hey, can we dream?
       section.row.breath
         .col-md-6
@@ -76,58 +84,39 @@ template(name="index")
               br
               | Project Lead at
               a(href='#') Airbnb.com
-  .container
-    .section-title
-      h2 Brutally affordable
-      h4 Shockingly inexpensive
-    section.row.breath.planpricing
-      .col-md-4.col-md-offset-4
-        .pricing.color1
-          .price
-            span.curr $
-            | 7
-            span.per /MO
-          .billing Billed Annually
-    section.row
-      .col-md-4.col-md-offset-4.text-center
-        h4 Other feedback tools
-    section.row
-      .col-md-2.col-md-offset-4.text-center.competitor-pricing
-        | Qualaroo: $63/mo
-      .col-md-2.text-center.competitor-pricing
-        | Intercom: $59/mo
-  .section-title
-      h5 Frequently Asked Questions
-    section.row.faq.breath
-      .col-md-6
-        h6 How does the free trial work?
-        p
-          | Our 10 day trial is 100% free and does not require credit card information to start. If at the end of your trial you would like to upgrade, great. If not, you can cancel your account altogether, or let us mark it as inactive for you to come back to later.
-        h6 Can I switch plans later?
-        p
-          | Absolutely. You can switch between our paid plans, or cancel your account altogether, whenever you like. We will adjust any payments accordingly.
-      .col-md-6
-        h6 Do I need to choose a plan now?
-        p
-          | No. You get the full featured, unlimited version of Startup completely free for 10 days. Once you're ready to upgrade, you may choose a plan which suits your needs.
-        h6 What payment types do you accept?
-        p
-          | We accept payments from MasterCard, Visa, Visa Debit and American Express. We do not accept PayPal. Remember, you do not need to supply card details to start your free trial.
+  //.section-title
+  //    h5 Frequently Asked Questions
+  //  section.row.faq.breath
+  //    .col-md-6
+  //      h6 How does the free trial work?
+  //      p
+  //        | Our 10 day trial is 100% free and does not require credit card information to start. If at the end of your trial you would like to upgrade, great. If not, you can cancel your account altogether, or let us mark it as inactive for you to come back to later.
+  //      h6 Can I switch plans later?
+  //      p
+  //        | Absolutely. You can switch between our paid plans, or cancel your account altogether, whenever you like. We will adjust any payments accordingly.
+  //    .col-md-6
+  //      h6 Do I need to choose a plan now?
+  //      p
+  //        | No. You get the full featured, unlimited version of Startup completely free for 10 days. Once you're ready to upgrade, you may choose a plan which suits your needs.
+  //      h6 What payment types do you accept?
+  //      p
+  //        | We accept payments from MasterCard, Visa, Visa Debit and American Express. We do not accept PayPal. Remember, you do not need to supply card details to start your free trial.
   main.footercta(role='main')
     .container
       h2
-        | Get More Customer Feedback
+        | Get Different Customer Feedback
       .row
         .col-md-12.text-center
           button.btn.btn-success.btn-large.login-with-google(type='submit') Sign in with Google
   .container
     section.row.breath
-      .col-md-12.footerlinks
-        //a(href='#') About
-        //a(href='#') Pricing
-        //a(href='blog.html') Blog
-        //a(href='#') Help
-        //a(href='#') Contact
-        //a(href='#') Privacy
-        //a(href='#') Terms
-        p © 2014 Wishpool. All Rights Reserved
+      .col-md-12
+        .footerlinks
+          //a(href='#') About
+          //a(href='#') Pricing
+          //a(href='blog.html') Blog
+          //a(href='#') Help
+          //a(href='#') Contact
+          //a(href='#') Privacy
+          //a(href='#') Terms
+        p.text-center © 2014 Wishpool. It's A Kind Of Magic. <a href="mailto:denis.d.gorbachev@gmail.com">Contact me</a> if you have questions.
