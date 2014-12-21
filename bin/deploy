@@ -2,6 +2,6 @@
 
 DIRNAME=$(cd `dirname $0` && pwd)
 
-MODULUS_TOKEN=6efdd973-40af-4c49-8759-3c2b01dda5b7 modulus project deploy --project-name=wishbar.com
+MODULUS_TOKEN=6efdd973-40af-4c49-8759-3c2b01dda5b7 modulus project deploy --project-name=wishpool.com
 $DIRNAME/logs
-notify-send -u normal -i face-glasses "Deployed to wishbar.com"
+notify-send -u normal -i face-glasses "Deployed to wishpool.com"

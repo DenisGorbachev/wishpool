@@ -1,12 +1,12 @@
 #!/bin/bash
 
 DIRNAME=$(cd `dirname $0` && pwd)
-METEOR_DOMAIN="wishbar.com"
+METEOR_DOMAIN="wishpool.com"
 USERNAME=$(<~/.meteor/${METEOR_DOMAIN}.username)
 PASSWORD=$(<~/.meteor/${METEOR_DOMAIN}.password)
 HOST="proximus.modulusmongo.net"
 PORT="27017"
-DB="wishbar"
+DB="wishpool"
 OUT_DIR="/tmp"
 
 EMAIL=$1

@@ -15,14 +15,14 @@ Router.map ->
       }
 
 Router.onAfterAction ->
-  share.setPageTitle("Wishbar = Instant customer feedback with ♥", false)
+  share.setPageTitle("Wishpool = Instant customer feedback with ♥", false)
 
 Router.onAfterAction ->
   share.debouncedSendPageview()
 
 share.setPageTitle = (title, appendSiteName = true) ->
   if appendSiteName
-    title += " - Wishbar"
+    title += " - Wishpool"
   if Meteor.settings.public.isDebug
     title = "(D) " + title
   document.title = title
