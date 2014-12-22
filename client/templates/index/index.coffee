@@ -13,6 +13,8 @@ Template.index.rendered = ->
   )
 
 Template.index.events
+  "click .login-with-google": (event, template) ->
+    Meteor.loginWithGoogle()
   "click .scrollto, click .gototop": (event, template) ->
     $anchor = $(event.currentTarget);
     $('html, body').stop().animate({

@@ -17,7 +17,12 @@ template(name="index")
     .section-title
       h2 Hear Your Customer Wishes
       h4 with instant feedback widget for your site
-    .section-title
+    section.breath.row
+      | I wish this page
+      .input-group
+        input.form-control(placeholder="had better graphics")
+        span.input-group-btn
+          button.btn.btn-default(type="submit") Go!
     section.row
       .col-xs-12.text-center
         button.btn.btn-success.btn-large.login-with-google(type='submit') Install On Your Site
