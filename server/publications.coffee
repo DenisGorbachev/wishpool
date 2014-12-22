@@ -12,15 +12,15 @@ Meteor.publish("currentUser", ->
 
 Meteor.publish("domains", ->
   if not @userId then return []
-  share.Domains.find({accessibleBy: @userId}, {fields: {accessibleBy: 0, friendUserIds: 0}})
+  Domains.find({accessibleBy: @userId}, {fields: {accessibleBy: 0, friendUserIds: 0}})
 )
 
 Meteor.publish("members", ->
   if not @userId then return []
-  share.Members.find({accessibleBy: @userId}, {fields: {accessibleBy: 0}})
+  Members.find({accessibleBy: @userId}, {fields: {accessibleBy: 0}})
 )
 
 Meteor.publish("styles", ->
   if not @userId then return []
-  share.Styles.find({accessibleBy: @userId}, {fields: {accessibleBy: 0}})
+  Styles.find({accessibleBy: @userId}, {fields: {accessibleBy: 0}})
 )

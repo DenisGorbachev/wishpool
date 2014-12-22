@@ -1,4 +1,4 @@
-share.currentUserHandle = Meteor.subscribe("currentUser")
-share.domainsHandle = Meteor.subscribe("domains")
-share.membersHandle = Meteor.subscribe("members")
-share.stylesHandle = Meteor.subscribe("styles")
+@currentUserHandle = Meteor.subscribe("currentUser")
+@domainsHandle = Meteor.subscribe("domains")
+@membersHandle = Meteor.subscribe("members")
+@stylesHandle = Meteor.subscribe("styles")

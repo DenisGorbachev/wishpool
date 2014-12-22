@@ -47,7 +47,7 @@ share.loadFixtures = ->
     "Pintask":
       name: "pintask.com"
       ownerId: "DenisGorbachev"
-  insertData(domains, share.Domains)
+  insertData(domains, Domains)
 
   styles =
     "PintaskLandingPage":
@@ -58,7 +58,7 @@ share.loadFixtures = ->
       name: "App"
       domainId: "Pintask"
       ownerId: "DenisGorbachev"
-  insertData(styles, share.Styles)
+  insertData(styles, Styles)
 
   serviceConfigurations =
     Google:

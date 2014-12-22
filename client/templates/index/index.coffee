@@ -1,6 +1,6 @@
 Template.index.helpers
   noDomains: ->
-    not share.Domains.findOne()
+    not Domains.findOne()
 
 Template.index.rendered = ->
 

@@ -18,7 +18,7 @@ Router.map ->
 
 Router.onBeforeAction ->
   if Meteor.userId()
-    if not share.Domains.findOne()
+    if not Domains.findOne()
       Router.go("/domains/new")
     @next()
   else

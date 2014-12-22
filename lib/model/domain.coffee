@@ -4,13 +4,13 @@ class Domain
 
 share.Transformations.domain = _.partial(share.transform, Domain)
 
-share.Domains = new Mongo.Collection("domains",
+@Domains = new Mongo.Collection("domains",
   transform: if Meteor.isClient then share.Transformations.domain else null
 )
 
 domainPreSave = (userId, changes) ->
 
-share.Domains.before.insert (userId, domain) ->
+Domains.before.insert (userId, domain) ->
   domain._id ||= Random.id()
   now = new Date()
   _.defaults(domain,
@@ -23,7 +23,7 @@ share.Domains.before.insert (userId, domain) ->
   domainPreSave.call(@, userId, domain)
   true
 
-share.Domains.before.update (userId, domain, fieldNames, modifier, options) ->
+Domains.before.update (userId, domain, fieldNames, modifier, options) ->
   now = new Date()
   modifier.$set = modifier.$set or {}
   modifier.$set.updatedAt = modifier.$set.updatedAt or now

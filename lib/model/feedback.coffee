@@ -4,13 +4,13 @@ class Feedback
 
 share.Transformations.feedback = _.partial(share.transform, Feedback)
 
-share.Feedbacks = new Mongo.Collection("feedbacks",
+@Feedbacks = new Mongo.Collection("feedbacks",
   transform: if Meteor.isClient then share.Transformations.feedback else null
 )
 
 feedbackPreSave = (userId, changes) ->
 
-share.Feedbacks.before.insert (userId, feedback) ->
+Feedbacks.before.insert (userId, feedback) ->
   feedback._id ||= Random.id()
   now = new Date()
   _.defaults(feedback,
@@ -21,7 +21,7 @@ share.Feedbacks.before.insert (userId, feedback) ->
   feedbackPreSave.call(@, userId, feedback)
   true
 
-share.Feedbacks.before.update (userId, feedback, fieldNames, modifier, options) ->
+Feedbacks.before.update (userId, feedback, fieldNames, modifier, options) ->
   now = new Date()
   modifier.$set = modifier.$set or {}
   modifier.$set.updatedAt = modifier.$set.updatedAt or now
