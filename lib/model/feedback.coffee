@@ -11,7 +11,7 @@ share.Feedbacks = new Mongo.Collection("feedbacks",
 feedbackPreSave = (userId, changes) ->
 
 share.Feedbacks.before.insert (userId, feedback) ->
-  feedback._id = feedback._id || Random.id()
+  feedback._id ||= Random.id()
   now = new Date()
   _.defaults(feedback,
     text: ""

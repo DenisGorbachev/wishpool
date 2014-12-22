@@ -18,6 +18,7 @@ Router.map ->
 
 Router.onBeforeAction ->
   if Meteor.userId()
+    if share.Domains
     @next()
   else
     @render("welcome")

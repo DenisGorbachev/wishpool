@@ -1,3 +1,6 @@
 FastRender.onAllRoutes (path) ->
   @subscribe("meteor.loginServiceConfiguration")
-#  @subscribe("userData")
+  @subscribe("currentUser")
+  @subscribe("domains")
+  @subscribe("members")
+  @subscribe("styles")

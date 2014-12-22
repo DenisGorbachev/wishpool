@@ -1,9 +1,11 @@
 template(name="index")
-  .container
+  .index.container
     .row
       .col-xs-12.col-md-6.col-md-offset-3
-        h2 Setup Wishpool on your site
-        textarea(rows="4").form-control
-          | some code
-        .buttons
-          button.btn.btn-success(type="button") Copy to clipboard
+        if noDomains
+          h2 Setup Wishpool on your site
+          form(role="form")
+            .form-group
+              label(for="name") Your domain
+              input.form-control(id="name" name="name" placeholder="example.com")
+            button.btn.btn-success(type="submit") Get the code!

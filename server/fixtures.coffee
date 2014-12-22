@@ -43,17 +43,22 @@ share.loadFixtures = ->
         "when": now
       }}})
 
-  widgets =
+  domains =
+    "Pintask":
+      name: "pintask.com"
+      ownerId: "DenisGorbachev"
+  insertData(domains, share.Domains)
+
+  styles =
     "PintaskLandingPage":
       name: "Landing Page"
+      domainId: "Pintask"
       ownerId: "DenisGorbachev"
-      createdAt: new Date(now - 10000)
-      updatedAt: new Date(now - 10000)
     "PintaskApp":
-      ownerId: "App"
-      createdAt: new Date(now - 9000)
-      updatedAt: new Date(now - 9000)
-  insertData(widgets, share.Widgets)
+      name: "App"
+      domainId: "Pintask"
+      ownerId: "DenisGorbachev"
+  insertData(styles, share.Styles)
 
   serviceConfigurations =
     Google:

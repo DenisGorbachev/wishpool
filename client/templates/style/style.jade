@@ -1,0 +1,15 @@
+template(name="style")
+  .style.container
+    .row
+      .col-xs-12.col-md-6.col-md-offset-3
+        ol
+            li <a href="#" class="copy-to-clipboard">Copy</a> the following code.
+            li Paste it on your site.
+            li <a href="#" class="customize">Customize</a> the widget to match your site style.
+          form(role="form")
+            .form-group
+              textarea(rows="4").form-control
+                | some code
+            button.btn.btn-success.copy-to-clipboard(type="button") Copy to clipboard
+            | or
+            a.customize(href="#") customize
