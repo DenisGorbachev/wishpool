@@ -1,7 +1,7 @@
-Template.index.helpers
+Template.welcome.helpers
 #  helper: ->
 
-Template.index.rendered = ->
+Template.welcome.rendered = ->
   $(".masthead").height($(window).height())
   @$(".typed").typed(
     strings: ["Desires", "Thoughts", "Mind", "Soul"]
@@ -12,7 +12,7 @@ Template.index.rendered = ->
     loop: true
   )
 
-Template.index.events
+Template.welcome.events
   "click .login-with-google": (event, template) ->
     Meteor.loginWithGoogle()
   "click .scrollto, click .gototop": (event, template) ->

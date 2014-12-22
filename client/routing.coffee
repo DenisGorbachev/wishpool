@@ -14,6 +14,12 @@ Router.map ->
         tool: share.Tools.findOne({slug: @params.slug})
       }
 
+Router.onBeforeAction ->
+  if Meteor.userId()
+    @next()
+  else
+    @render("welcome")
+
 Router.onAfterAction ->
   share.setPageTitle("Wishpool = Instant customer feedback with ♥", false)
 
