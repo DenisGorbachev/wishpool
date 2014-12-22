@@ -9,4 +9,6 @@ Template.layout.helpers
 Template.layout.rendered = ->
 
 Template.layout.events
-#  "click .selector": (event, template) ->
+  "click .logout": (event, template) ->
+    Meteor.logout ->
+      Router.go("/")

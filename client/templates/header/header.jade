@@ -28,5 +28,12 @@ template(name="header")
           li.github-button-wrapper
             iframe(src="http://ghbtns.com/github-btn.html?user=DenisGorbachev&repo=wishpool&type=fork&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="110" height="40")
         ul.nav.navbar-nav.navbar-right
-            li
-              a(href="#") About
+          li.dropdown
+            a.dropdown-toggle(href="#", data-toggle="dropdown")
+              | {{currentUser.profile.name}}
+              | &nbsp;
+              b.caret
+            ul.dropdown-menu
+              li: a(href="/profile") Profile
+              li.divider
+              li: a.logout(href="#") Logout

@@ -2,6 +2,8 @@ Router.configure
   layoutTemplate: "layout"
   notFoundTemplate: "notFound"
   loadingTemplate: "loading"
+  yieldTemplates:
+    "header": {to: "header"}
 
 Router.map ->
   @route "index",
