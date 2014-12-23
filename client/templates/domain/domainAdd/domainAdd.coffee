@@ -6,11 +6,11 @@ Template.domainAdd.rendered = ->
 
 Template.domainAdd.events
   'submit form': grab encapsulate (event, template) ->
-    domain = $(template.find("input[name='name']")).val()
+    name = $(template.find("input[name='name']")).val()
 #    domainName = getHostName(domain)
 #    cl "parsed value = " + domainName
     _id = Domains.insert(
-      name: domain
+      name: name
     )
     Router.go("/domain/" + _id)
 
