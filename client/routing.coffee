@@ -8,18 +8,27 @@ Router.configure
 Router.map ->
   @route "index",
     path: "/"
-  @route "convert",
-    path: "/convert/:slug"
-    template: "convert"
+  @route "domainAdd",
+    path: "/domain/add"
+  @route "domain",
+    path: "/domain/:_id"
     data: ->
       {
-        tool: share.Tools.findOne({slug: @params.slug})
+      domain: share.Domains.findOne(@params._id)
+      }
+  @route "styleAdd",
+    path: "/style/add"
+  @route "style",
+    path: "/style/:_id"
+    data: ->
+      {
+        style: share.Styles.findOne(@params._id)
       }
 
 Router.onBeforeAction ->
   if Meteor.userId()
     if not Domains.findOne()
-      Router.go("/domains/new")
+      Router.go("/domain/add")
     @next()
   else
     @render("welcome")

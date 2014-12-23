@@ -1,0 +1,14 @@
+template(name="domainAdd")
+  .domain.add.container
+    .row
+      .col-xs-12.col-md-6.col-md-offset-3
+        h2
+          if noDomains
+            | Setup Wishpool on your site
+          else
+            | Add new domain
+        form(role="form" novalidate="novalidate")
+          .form-group
+            //label(for="name") Domain name
+            input.form-control(id="name" name="name" placeholder="example.com" tabindex="1" required="true" pattern=".*\..*")
+          button.btn.btn-success(type="submit") Get the code!

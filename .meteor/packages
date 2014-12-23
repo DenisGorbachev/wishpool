@@ -18,3 +18,4 @@ matb33:collection-hooks
 percolatestudio:percolatestudio-mixpanel
 percolatestudio:percolatestudio-migrations
 email
+accounts-password
