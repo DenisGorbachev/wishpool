@@ -9,13 +9,10 @@ Template.domainAdd.events
     domain = $(template.find("input[name='name']")).val()
 #    domainName = getHostName(domain)
 #    cl "parsed value = " + domainName
-    Domains.insert(
+    _id = Domains.insert(
       name: domain
     )
-    newlyCreatedDomain = Domains.findOne({name:domain})
-    cl newlyCreatedDomain
-    cl newlyCreatedDomain._id
-    Router.go("/domain/"+newlyCreatedDomain._id)
+    Router.go("/domain/" + _id)
 
 #getHostName = (domain) ->
 #  if domain.indexOf("http") isnt 0
