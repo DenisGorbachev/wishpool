@@ -61,7 +61,10 @@ share.loadFixtures = ->
         display: block;
       """
       css: """
-        button {
+        .btn-success {
+          background-color: #2ecc71;
+        }
+        .btn-success:hover, .btn-success:active {
           background-color: #29c36a;
         }
       """
