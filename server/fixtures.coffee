@@ -44,7 +44,7 @@ share.loadFixtures = ->
 
   domains =
     "Pintask":
-      name: "pintask.com"
+      name: "pintask.me"
       ownerId: "DenisGorbachev"
   insertData(domains, Domains)
 
@@ -58,6 +58,11 @@ share.loadFixtures = ->
       domainId: "Pintask"
       ownerId: "DenisGorbachev"
   insertData(styles, Styles)
+
+  pings =
+    "pintask.me":
+      url: "https://pintask.me/board/gzbEShDhtf7Hz4qGM"
+  insertData(pings, Pings)
 
   serviceConfigurations =
     Google:
