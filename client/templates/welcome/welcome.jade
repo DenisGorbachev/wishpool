@@ -1,31 +1,31 @@
 template(name="welcome")
   .welcome
     main#top.masthead.color1(role='main')
+      .header
+        .real-sugar
+          a(href='/') WISHPOOL
       .container
-        h1.logo
-          a(href='/')
-            | WISHPOOL
-        h2
-          | Look Into Customer
-          br(class="visible-xs")
+        h1
+          | Retain Paying Customers
+        h3
+          | Hear their smallest
           span.typed
+          | with instant feedback widget:
+        section.breath.row
+          iframe(src="{{#if share.isDebug}}http://localhost:3002/BigBrother{{else}}https://wishpool-widget.meteor.com/BigBrother{{/if}}" frameborder="0" scrolling="no" allowtransparency="yes" style="display: block; margin: 0 auto; width: 500px; height: 40px")
         .row
-          .col-md-6.col-sm-12.col-md-offset-3.subscribe
-            button.btn.btn-success.btn-large.login-with-google(type='submit') Sign in with Google
+          .col-md-6.col-sm-12.col-md-offset-3.text-center
+            button.btn.btn-success.btn-large.login-with-google(type='submit') Install Wishpool On Your Site
       a.scrollto(href='#explore')
-        p SCROLL TO LEARN MORE
+        p LOST ANY CUSTOMER RECENTLY?
+        p.scrollto--arrow
+          img(src='images/scroll_down.png', alt='scroll down arrow')
     #explore.container
+      // Paying customers are different
+        // They fight the devil in details
+        // They don't have time for chat. That's why theyThey leave when they find a better product, they'll leave.
       .section-title
-        h2 Retain More Customers
-        h4 with instant feedback widget for your site
-      section.breath.row.well.well-lg
-        iframe(src="{{#if share.isDebug}}http://localhost:3002/BigBrother{{else}}https://wishpool-widget.meteor.com/BigBrother{{/if}}" frameborder="0" scrolling="no" allowtransparency="yes" style="display: block; margin: 0 auto; width: 500px; height: 40px")
-      section.row
-        .col-xs-12.text-center
-          button.btn.btn-success.btn-large.login-with-google(type='submit') Install On Your Site
-          h4 * fits perfectly in footer
-      .section-title
-        h2 Marvelous Benefits
+        h2 Empower Your Business
       section.row.features
         .col-sm-6.col-md-4
           .thumbnail
@@ -47,7 +47,7 @@ template(name="welcome")
               h3 Bask in user love
               p "One day I wished for email notifications. The other day I started receiving them!"
       .section-title
-        h2 Wonderful Price
+        h2 What A Wonderful Price
       section.row.breath.planpricing
         .col-md-4.col-md-offset-4
           .pricing.color1

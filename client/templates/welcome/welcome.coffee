@@ -4,7 +4,8 @@ Template.welcome.helpers
 Template.welcome.rendered = ->
   $(".masthead").height($(window).height())
   @$(".typed").typed(
-    strings: ["Desires", "Thoughts", "Mind", "Soul"]
+    strings: ["issues", "wishes", "concerns"]
+    showCursor: false
     startDelay: 0
     backDelay: 2500
     typeSpeed: 70

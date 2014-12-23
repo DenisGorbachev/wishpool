@@ -54,6 +54,8 @@ share.loadFixtures = ->
   styles =
     "BigBrother":
       name: "Landing Page"
+      label: "I wish this page"
+      placeholder: "had a quick search button"
       iframeCss: """
         height: 36px;
         width: 400px;
