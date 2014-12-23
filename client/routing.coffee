@@ -35,6 +35,7 @@ Router.onBeforeAction ->
       Router.go("/domain/add")
     @next()
   else
+    @render(null, {to: "header"})
     @render("welcome")
 
 Router.onAfterAction ->

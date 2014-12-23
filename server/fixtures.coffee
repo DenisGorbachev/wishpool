@@ -43,12 +43,30 @@ share.loadFixtures = ->
       }}})
 
   domains =
+    "Wishpool":
+      name: "wishpool.meteor.com"
+      ownerId: "DenisGorbachev"
     "Pintask":
       name: "pintask.me"
       ownerId: "DenisGorbachev"
   insertData(domains, Domains)
 
   styles =
+    "BigBrother":
+      name: "Landing Page"
+      iframeCss: """
+        height: 36px;
+        width: 400px;
+        margin: 0 auto;
+        display: block;
+      """
+      css: """
+        button {
+          background-color: #29c36a;
+        }
+      """
+      domainId: "Wishpool"
+      ownerId: "DenisGorbachev"
     "PintaskLandingPage":
       name: "Landing Page"
       domainId: "Pintask"
