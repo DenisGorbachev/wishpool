@@ -8,13 +8,17 @@ Router.configure
 Router.map ->
   @route "index",
     path: "/"
+#    data: ->
+#      {
+#        domains: Domains.findAll({ownerId : Meteor.userId()})
+#      }
   @route "domainAdd",
     path: "/domain/add"
   @route "domain",
     path: "/domain/:_id"
     data: ->
       {
-      domain: share.Domains.findOne(@params._id)
+        domain: Domains.findOne(@params._id)
       }
   @route "styleAdd",
     path: "/style/add"
