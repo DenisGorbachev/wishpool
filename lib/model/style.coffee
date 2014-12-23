@@ -14,6 +14,7 @@ Styles.before.insert (userId, style) ->
   style._id ||= Random.id()
   now = new Date()
   _.defaults(style,
+    name: ""
     label: "I wish this page"
     placeholder: "had better graphics"
     css: ""
