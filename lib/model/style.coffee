@@ -19,6 +19,7 @@ Styles.before.insert (userId, style) ->
     placeholder: "had better graphics"
     css: ""
     accessibleBy: []
+    ownerId: userId
     updatedAt: now
     createdAt: now
   )
