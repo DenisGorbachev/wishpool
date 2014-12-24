@@ -51,7 +51,7 @@ share.loadFixtures = ->
       ownerId: "DenisGorbachev"
   insertData(domains, Domains)
 
-  styles =
+  widgets =
     "BigBrother":
       name: "Landing Page"
       label: "I wish this page"
@@ -70,17 +70,14 @@ share.loadFixtures = ->
           background-color: #29c36a;
         }
       """
-      domainId: "Wishpool"
       ownerId: "DenisGorbachev"
     "PintaskLandingPage":
       name: "Landing Page"
-      domainId: "Pintask"
       ownerId: "DenisGorbachev"
     "PintaskApp":
       name: "App"
-      domainId: "Pintask"
       ownerId: "DenisGorbachev"
-  insertData(styles, Styles)
+  insertData(widgets, Widgets)
 
   pings =
     "pintask.me":

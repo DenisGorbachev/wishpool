@@ -1,47 +1,41 @@
-Domains.before.insert (userId, domain) ->
-  accessibleBy = share.getDomainAccessibleBy(domain)
-  domain.accessibleBy = accessibleBy
-  domain.friendUserIds = accessibleBy
-  domain
+Widgets.before.insert (userId, widget) ->
+  accessibleBy = share.getWidgetAccessibleBy(widget)
+  widget.accessibleBy = accessibleBy
+  widget.friendUserIds = accessibleBy
+  widget
 
 Members.before.insert (userId, member) ->
-  domain = Domains.findOne(member.domainId)
-  member.accessibleBy = domain.accessibleBy
+  widget = Widgets.findOne(member.widgetId)
+  member.accessibleBy = widget.accessibleBy
   member
 
-Styles.before.insert (userId, style) ->
-  domain = Domains.findOne(style.domainId)
-  style.accessibleBy = domain.accessibleBy
-  style
-
-Domains.after.insert (userId, domain) ->
-  Meteor.users.update({_id: {$in: domain.friendUserIds}}, {$addToSet: {friendUserIds: {$each: domain.friendUserIds}}}, {multi: true})
+Widgets.after.insert (userId, widget) ->
+  Meteor.users.update({_id: {$in: widget.friendUserIds}}, {$addToSet: {friendUserIds: {$each: widget.friendUserIds}}}, {multi: true})
   Members.insert(
-    userId: domain.ownerId
-    domainId: domain._id
+    userId: widget.ownerId
+    widgetId: widget._id
     role: "admin"
   )
 
-Domains.after.update (userId, domain, fieldNames, modifier, options) ->
+Widgets.after.update (userId, widget, fieldNames, modifier, options) ->
   if modifier.$set?.friendUserIds or modifier.$addToSet?.friendUserIds
-    Meteor.users.update({_id: {$in: domain.friendUserIds}}, {$addToSet: {friendUserIds: {$each: domain.friendUserIds}}}, {multi: true})
+    Meteor.users.update({_id: {$in: widget.friendUserIds}}, {$addToSet: {friendUserIds: {$each: widget.friendUserIds}}}, {multi: true})
 
 Members.after.insert (userId, member) ->
-  domain = Domains.findOne(member.domainId)
-  Domains.update(domain._id, {$addToSet: {friendUserIds: member.userId}})
-  Meteor.users.update(member.userId, {$addToSet: {"profile.domainPositions": domain._id}})
-  share.recalculateDomainAccessibleBy(domain)
+  widget = Widgets.findOne(member.widgetId)
+  Widgets.update(widget._id, {$addToSet: {friendUserIds: member.userId}})
+  Meteor.users.update(member.userId, {$addToSet: {"profile.widgetPositions": widget._id}})
+  share.recalculateWidgetAccessibleBy(widget)
 
 Members.after.remove (userId, member) ->
-  domain = Domains.findOne(member.domainId)
-  if domain # domain way not exist on cascade remove hooks
-    share.recalculateDomainAccessibleBy(domain)
+  widget = Widgets.findOne(member.widgetId)
+  if widget # widget way not exist on cascade remove hooks
+    share.recalculateWidgetAccessibleBy(widget)
 
-share.getDomainAccessibleBy = (domain) ->
-  _.pluck(Members.find(domainId: domain._id).fetch(), "userId")
+share.getWidgetAccessibleBy = (widget) ->
+  _.pluck(Members.find(widgetId: widget._id).fetch(), "userId")
 
-share.recalculateDomainAccessibleBy = (domain) ->
-  accessibleBy = share.getDomainAccessibleBy(domain)
-  Domains.update(domain._id, {$set: {accessibleBy: accessibleBy, friendUserIds: accessibleBy}})
-  Members.update({domainId: domain._id}, {$set: {accessibleBy: accessibleBy}}, {multi: true})
-  Styles.update({domainId: domain._id}, {$set: {accessibleBy: accessibleBy}}, {multi: true})
+share.recalculateWidgetAccessibleBy = (widget) ->
+  accessibleBy = share.getWidgetAccessibleBy(widget)
+  Widgets.update(widget._id, {$set: {accessibleBy: accessibleBy, friendUserIds: accessibleBy}})
+  Members.update({widgetId: widget._id}, {$set: {accessibleBy: accessibleBy}}, {multi: true})

@@ -20,7 +20,7 @@ Meteor.publish("members", ->
   Members.find({accessibleBy: @userId}, {fields: {accessibleBy: 0}})
 )
 
-Meteor.publish("styles", ->
+Meteor.publish("widgets", ->
   if not @userId then return []
-  Styles.find({accessibleBy: @userId}, {fields: {accessibleBy: 0}})
+  Widgets.find({accessibleBy: @userId}, {fields: {accessibleBy: 0}})
 )

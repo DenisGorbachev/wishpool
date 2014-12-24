@@ -19,12 +19,13 @@ Pings.before.insert (userId, ping) ->
     createdAt: now
   )
   pingPreSave.call(@, userId, ping)
-  Email.send(
-    to: "denis.d.gorbachev@gmail.com",
-    from: "noreply@wishpool.meteor.com",
-    subject: "[Wishpool] Ping from " + ping.url,
-    text: "Ping from " + ping.url
-  )
+  if ping.isNew isnt false
+    Email.send(
+      to: "denis.d.gorbachev@gmail.com",
+      from: "noreply@wishpool.meteor.com",
+      subject: "[Wishpool] Ping from " + ping.url,
+      text: "Ping from " + ping.url
+    )
   true
 
 Pings.before.update (userId, ping, fieldNames, modifier, options) ->

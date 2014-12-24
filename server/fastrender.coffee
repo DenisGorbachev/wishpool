@@ -3,4 +3,4 @@ FastRender.onAllRoutes (path) ->
   @subscribe("currentUser")
   @subscribe("domains")
   @subscribe("members")
-  @subscribe("styles")
+  @subscribe("widgets")

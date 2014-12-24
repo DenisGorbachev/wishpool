@@ -20,13 +20,13 @@ Router.map ->
       {
         domain: Domains.findOne(@params._id)
       }
-  @route "styleAdd",
-    path: "/style/add"
-  @route "style",
-    path: "/style/:_id"
+  @route "widgetAdd",
+    path: "/widget/add"
+  @route "widget",
+    path: "/widget/:_id"
     data: ->
       {
-        style: share.Styles.findOne(@params._id)
+        widget: Widgets.findOne(@params._id)
       }
 
 Router.onBeforeAction ->

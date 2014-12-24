@@ -1,6 +1,6 @@
 Template.domain.helpers
-#  styles: ->
-#    Styles.find({domainId: @data.domain._id})
+#  widgets: ->
+#    Widgets.find({domainId: @data.domain._id})
 
 Template.domain.rendered = ->
 
