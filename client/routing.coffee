@@ -11,8 +11,8 @@ Router.map ->
     data: ->
       {
         starred: Feedbacks.find({isStarred: true}, {sort: {isArchived: -1}})
-        new: Feedbacks.find({isArchived: false})
-        archived: Feedbacks.find({isArchived: true})
+        new: Feedbacks.find({isArchived: false, isStarred: false})
+        archived: Feedbacks.find({isArchived: true, isStarred: false})
       }
   @route "domainAdd",
     path: "/domain/add"

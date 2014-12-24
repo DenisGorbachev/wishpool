@@ -22,6 +22,7 @@ Feedbacks.before.insert (userId, feedback) ->
     sourceUserEmail: ""
     sourceUserAvatarUrl: ""
     sourceUserId: ""
+    isStarred: false
     isArchived: false
     domainId: null
     accessibleBy: []

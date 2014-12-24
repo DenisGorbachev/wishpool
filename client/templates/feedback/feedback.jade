@@ -2,8 +2,11 @@ template(name="feedback")
   a.feedback.list-group-item(href="#" class="{{#if isOpen}}is-open{{/if}}")
     p.list-group-item-heading
       | {{text}}
-      span.text-muted
-        | ~
-        a.text-muted.passthru(href="{{sourceUrl}}" target="_blank") {{sourceUrlCast}}
     if isOpen
-      p
+      p.text-muted.list-group-item-heading
+       | {{label}}
+       span.text-muted {{placeholder}}
+      p.text-muted
+        a.text-muted.passthru.source-url(href="{{sourceUrl}}" target="_blank") {{sourceUrlCast}}
+        | on
+        | {{createdAt}}
