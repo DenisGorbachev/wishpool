@@ -8,10 +8,12 @@ Router.configure
 Router.map ->
   @route "index",
     path: "/"
-#    data: ->
-#      {
-#        domains: Domains.findAll({ownerId : Meteor.userId()})
-#      }
+    data: ->
+      {
+        starred: Feedbacks.find({isStarred: true}, {sort: {isRead: -1}})
+        unread: Feedbacks.find({isRead: false})
+        read: Feedbacks.find({isRead: true})
+      }
   @route "domainAdd",
     path: "/domain/add"
   @route "domain",
