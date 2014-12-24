@@ -15,6 +15,15 @@ Feedbacks.before.insert (userId, feedback) ->
   now = new Date()
   _.defaults(feedback,
     text: ""
+    label: ""
+    placeholder: ""
+    sourceUrl: ""
+    sourceName: ""
+    sourceEmail: ""
+    sourceAvatarUrl: ""
+    sourceId: ""
+    isRead: false
+    domainId: null
     updatedAt: now
     createdAt: now
   )

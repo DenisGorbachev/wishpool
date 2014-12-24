@@ -42,15 +42,6 @@ share.loadFixtures = ->
         "when": now
       }}})
 
-  domains =
-    "Wishpool":
-      name: "wishpool.meteor.com"
-      ownerId: "DenisGorbachev"
-    "Pintask":
-      name: "pintask.me"
-      ownerId: "DenisGorbachev"
-  insertData(domains, Domains)
-
   widgets =
     "BigBrother":
       name: "Landing Page"
@@ -78,6 +69,39 @@ share.loadFixtures = ->
       name: "App"
       ownerId: "DenisGorbachev"
   insertData(widgets, Widgets)
+
+  feedbacks =
+    IWishThisPageHadBetterGraphics:
+      text: "I wish this page had better graphics"
+      label: "I wish this page"
+      placeholder: "had better graphics"
+      sourceUrl: "https://wishpool.meteor.com/"
+    IWishYouHadBetterMarketing:
+      text: "I wish you had better marketing"
+      label: "I wish this page"
+      placeholder: "had better graphics"
+      sourceUrl: "https://wishpool.meteor.com/"
+    IWishPintaskHadMobileVersion:
+      text: "I wish Pintask had mobile version"
+      label: "I wish Pintask"
+      placeholder: "..."
+      sourceUrl: "https://pintask.me/board/joJjt3kusPuiTtxjk"
+      sourceName: "Анастасия Хохлова"
+      sourceEmail: "honastena@pintask.me"
+      sourceAvatarUrl: "https://www.filepicker.io/api/file/XJkV1GpKQ3KcIBbRrG4B"
+      sourceId: "m5wg4cHCrF4myZMg3"
+      isRead: true
+      isStarred: true
+    IWishPintaskHadMobileApp:
+      text: "I wish Pintask had mobile app"
+      label: "I wish Pintask"
+      placeholder: "..."
+      sourceUrl: "https://pintask.me/settings"
+      sourceName: "Алена Виноградова"
+      sourceEmail: "alena.vinogradova@pintask.me"
+      sourceId: "R9L5Eh6armZGtTdur"
+      isRead: true
+  insertData(feedbacks, Feedbacks)
 
   pings =
     "pintask.me":
