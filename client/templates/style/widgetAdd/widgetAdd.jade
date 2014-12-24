@@ -1,0 +1,57 @@
+template(name="widgetAdd")
+  .container
+    .row
+      .col-xs-12.col-md-6
+          h2 Default
+    .row
+      .col-xs-12.col-md-6
+          h3 Step 1. Customize
+      .col-xs-12.col-md-6
+          h3 Step 2. Apply to your site
+    .row
+      .col-xs-12.col-md-6
+        .row.top_margin
+          .col-xs-2
+            label(for="label-input") Label
+          .col-xs-8
+            input(id="label-input").form-control
+        .row.top_margin
+          .col-md-2
+            label Placeholder
+          .col-md-8
+            input.form-control
+        .row.top_margin
+          .col-md-2
+            label Button
+          .col-md-2
+            input(type="radio", value="1", id="icon-radio")
+            label(for="icon-radio")
+              | Icon
+          .col-md-4
+            .btn-group.btn-group-md
+              button.btn.btn-default.btn-sm.btn-group.fa.fa-paper-plane
+              button.btn.btn-default.btn-sm.btn-group.fa.fa-check
+              button.btn.btn-default.btn-sm.btn-group.fa.fa-reply
+              button.btn.btn-default.btn-sm.btn-group.fa.fa-rocket
+        .row.top_margin
+          .col-md-2
+          .col-md-2
+            input(type="radio", value="0", id="text-radio")
+            label(for="text-radio")
+              | Text
+          .col-md-6
+            input.form-control
+        .row.top_margin
+          .col-md-2
+            label CSS
+          .col-md-8
+            textarea(placeholder="Paste your code here", rows="6").form-control
+        .row.top_margin
+          button.btn.btn-success(type="button") Save
+
+      .col-xs-12.col-md-6
+        form(role="form")
+          .form-group
+            textarea(rows="4").form-control
+              | some code
+          button.btn.btn-success.copy-to-clipboard(type="button") Copy to clipboard and paste to the site
