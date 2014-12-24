@@ -10,9 +10,9 @@ Router.map ->
     path: "/"
     data: ->
       {
-        starred: Feedbacks.find({isStarred: true}, {sort: {isRead: -1}})
-        unread: Feedbacks.find({isRead: false})
-        read: Feedbacks.find({isRead: true})
+        starred: Feedbacks.find({isStarred: true}, {sort: {isArchived: -1}})
+        new: Feedbacks.find({isArchived: false})
+        archived: Feedbacks.find({isArchived: true})
       }
   @route "domainAdd",
     path: "/domain/add"
@@ -34,7 +34,7 @@ Router.map ->
 Router.onBeforeAction ->
   if Meteor.userId()
     if not Widgets.findOne({isNew: false})
-      _id = Widgets.insert({})
+      _id = Widgets.insert({name: "My first widget"})
       Router.go("/widget/" + _id)
     @next()
   else
