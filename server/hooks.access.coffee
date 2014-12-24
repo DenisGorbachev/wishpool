@@ -9,6 +9,11 @@ Members.before.insert (userId, member) ->
   member.accessibleBy = widget.accessibleBy
   member
 
+Feedbacks.before.insert (userId, feedback) ->
+  widget = Widgets.findOne(feedback.widgetId)
+  feedback.accessibleBy = widget.accessibleBy
+  feedback
+
 Widgets.after.insert (userId, widget) ->
   Meteor.users.update({_id: {$in: widget.friendUserIds}}, {$addToSet: {friendUserIds: {$each: widget.friendUserIds}}}, {multi: true})
   Members.insert(
@@ -39,3 +44,4 @@ share.recalculateWidgetAccessibleBy = (widget) ->
   accessibleBy = share.getWidgetAccessibleBy(widget)
   Widgets.update(widget._id, {$set: {accessibleBy: accessibleBy, friendUserIds: accessibleBy}})
   Members.update({widgetId: widget._id}, {$set: {accessibleBy: accessibleBy}}, {multi: true})
+  Feedbacks.update({widgetId: widget._id}, {$set: {accessibleBy: accessibleBy}}, {multi: true})

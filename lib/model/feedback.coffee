@@ -18,12 +18,13 @@ Feedbacks.before.insert (userId, feedback) ->
     label: ""
     placeholder: ""
     sourceUrl: ""
-    sourceName: ""
-    sourceEmail: ""
-    sourceAvatarUrl: ""
-    sourceId: ""
+    sourceUserName: ""
+    sourceUserEmail: ""
+    sourceUserAvatarUrl: ""
+    sourceUserId: ""
     isRead: false
     domainId: null
+    accessibleBy: []
     updatedAt: now
     createdAt: now
   )

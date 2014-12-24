@@ -20,6 +20,7 @@ Widgets.before.insert (userId, widget) ->
     css: ""
     accessibleBy: []
     friendUserIds: []
+    isNew: true
     ownerId: userId
     updatedAt: now
     createdAt: now

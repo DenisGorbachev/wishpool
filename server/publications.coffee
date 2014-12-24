@@ -10,9 +10,9 @@ Meteor.publish("currentUser", ->
   )
 )
 
-Meteor.publish("domains", ->
+Meteor.publish("widgets", ->
   if not @userId then return []
-  Domains.find({accessibleBy: @userId}, {fields: {accessibleBy: 0, friendUserIds: 0}})
+  Widgets.find({accessibleBy: @userId}, {fields: {accessibleBy: 0, friendUserIds: 0}})
 )
 
 Meteor.publish("members", ->
@@ -20,7 +20,12 @@ Meteor.publish("members", ->
   Members.find({accessibleBy: @userId}, {fields: {accessibleBy: 0}})
 )
 
-Meteor.publish("widgets", ->
+Meteor.publish("feedbacks", ->
   if not @userId then return []
-  Widgets.find({accessibleBy: @userId}, {fields: {accessibleBy: 0}})
+  Feedbacks.find({accessibleBy: @userId}, {fields: {accessibleBy: 0}})
+)
+
+Meteor.publish("domains", ->
+  if not @userId then return []
+  Domains.find({accessibleBy: @userId}, {fields: {accessibleBy: 0}})
 )
