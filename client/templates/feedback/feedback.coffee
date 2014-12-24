@@ -18,3 +18,7 @@ Template.feedback.events
     Feedbacks.update(@_id, {$set: {isStarred: not @isStarred}})
   "click .toggle-is-archived": encapsulate (event, template) ->
     Feedbacks.update(@_id, {$set: {isArchived: not @isArchived}})
+  "click .remove": encapsulate (event, template) ->
+    $link = $(event.currentTarget)
+    if (confirm($link.attr("data-confirm")))
+      Feedbacks.remove(@_id)

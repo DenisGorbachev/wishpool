@@ -15,19 +15,23 @@ feedbackPreSave = (userId, changes) ->
 Feedbacks.before.insert (userId, feedback) ->
   feedback._id ||= Random.id()
   now = new Date()
+  widget = Widgets.findOne(feedback.widgetId)
+  if not widget
+    throw new Match.Error("Can't find widget #" + feedback.widgetId)
   _.defaults(feedback,
     text: ""
-    label: ""
-    placeholder: ""
+    label: widget.label
+    placeholder: widget.placeholder
     sourceUrl: ""
     sourceUserName: ""
     sourceUserEmail: ""
     sourceUserAvatarUrl: ""
     sourceUserId: ""
+    widgetId: widget._id
+    domainId: null
     isStarred: false
     isArchived: false
-    domainId: null
-    accessibleBy: []
+    accessibleBy: widget.accessibleBy
     updatedAt: now
     createdAt: now
   )

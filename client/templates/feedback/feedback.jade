@@ -2,8 +2,8 @@ template(name="feedback")
   a.feedback.list-group-item(href="#" class="{{#if isOpen}}is-open{{/if}}")
     p.list-group-item-heading
       .control-icons.pull-right
-        span.toggle-is-starred.fa.fa-lg.fa-fw(class="{{#if isStarred}}fa-star{{else}}fa-star-o{{/if}}")
-        span.toggle-is-archived.fa.fa-lg.fa-fw(class="{{#if isArchived}}fa-check-circle{{else}}fa-check-circle-o{{/if}}")
+        span.toggle-is-starred.fa.fa-lg.fa-fw(class="{{#if isStarred}}fa-star{{else}}fa-star-o{{/if}}" title="{{#if isStarred}}Unstar{{else}}Star{{/if}}")
+        span.toggle-is-archived.fa.fa-lg.fa-fw(class="{{#if isArchived}}fa-check-circle{{else}}fa-check-circle-o{{/if}}" title="{{#if isArchived}}Back to New{{else}}Archive{{/if}}")
       if sourceUserAvatarUrl
         span.avatar(style="background-image: url('{{sourceUserAvatarUrl}}');")
       | {{#if sourceUserName}}{{sourceUserName}}: {{/if}}{{text}}
@@ -13,7 +13,7 @@ template(name="feedback")
         // | {{label}}
         // span.text-muted {{placeholder}}
         .control-icons.pull-right
-          span.remove.fa.fa-lg.fa-fw.fa-trash-o
+          span.remove.fa.fa-lg.fa-fw.fa-trash-o(title="Delete" data-confirm='Delete "{{text}}"?')
         p
           if sourceUserEmail
             span.atom: a.text-muted.passthru.inline-link(href="mailto:{{sourceUserEmail}}?subject={{sourceUserEmailSubject}}" target="_blank") {{sourceUserEmail}}
