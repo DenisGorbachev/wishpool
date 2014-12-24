@@ -3,10 +3,10 @@ template(name="feedback")
     p.list-group-item-heading
       | {{text}}
     if isOpen
-      p.text-muted.list-group-item-heading
-       | {{label}}
-       span.text-muted {{placeholder}}
+      //p.text-muted.list-group-item-heading
+      // | {{label}}
+      // span.text-muted {{placeholder}}
       p.text-muted
         a.text-muted.passthru.source-url(href="{{sourceUrl}}" target="_blank") {{sourceUrlCast}}
-        | on
-        | {{createdAt}}
+        | •
+        span(title="{{createdAt}}") {{momentFromNow createdAt}}

@@ -10,21 +10,18 @@ template(name="header")
         a.navbar-brand(href="/") Wishpool
       #bs-example-navbar-collapse-1.collapse.navbar-collapse
         ul.nav.navbar-nav
-          li: a(href="/futurizator-batch-convert") Futurizator
-          each categories
-            li.dropdown
-              a.dropdown-toggle(href="#", data-toggle="dropdown")
-                | #{name}
-                | &nbsp;
-                b.caret
-              ul.dropdown-menu
-                each categoryTools true
-                  li: a(href=toolUrl) #{name}
-                each categoryTools false
-                  li: a.text-muted(href="#") #{name}
-                li: a.text-muted(href="#") ~ more soon ~
-                li.divider
-                li: a(href="https://github.com/DenisGorbachev/wishpool/issues/new") Suggest new
+          li: a(href="/") Feedback
+          li.dropdown
+            a.dropdown-toggle(href="#", data-toggle="dropdown")
+              | Widgets
+              b.caret
+            ul.dropdown-menu
+              each widgets
+                li: a(href=path) {{name}}
+              li.divider
+              li: a.add-widget(href="#")
+                span.fa.fa-plus
+                | Add widget
         ul.nav.navbar-nav.navbar-right
           li.dropdown
             a.dropdown-toggle(href="#", data-toggle="dropdown")

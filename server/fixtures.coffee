@@ -44,7 +44,7 @@ share.loadFixtures = ->
 
   widgets =
     "BigBrother":
-      name: "Landing Page"
+      name: "Wishpool: Main Page"
       label: "I wish this page"
       placeholder: "had a quick search button"
       iframeCss: """
@@ -63,10 +63,10 @@ share.loadFixtures = ->
       """
       ownerId: "DenisGorbachev"
     "PintaskLandingPage":
-      name: "Landing Page"
+      name: "Pintask: Main Page"
       ownerId: "DenisGorbachev"
     "PintaskApp":
-      name: "App"
+      name: "Pintask: App"
       ownerId: "DenisGorbachev"
   insertData(widgets, Widgets)
 

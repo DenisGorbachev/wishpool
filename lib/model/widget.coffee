@@ -1,6 +1,7 @@
 class Widget
   constructor: (doc) ->
     _.extend(@, doc)
+  path: -> "/widget/" + @_id
 
 share.Transformations.widget = _.partial(share.transform, Widget)
 

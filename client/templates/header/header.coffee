@@ -1,5 +1,6 @@
 Template.header.helpers
-#  helper: ->
+  widgets: ->
+    Widgets.find()
 
 Template.header.rendered = ->
 
