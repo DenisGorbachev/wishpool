@@ -1,4 +1,5 @@
 @currentUserHandle = Meteor.subscribe("currentUser")
-@domainsHandle = Meteor.subscribe("domains")
-@membersHandle = Meteor.subscribe("members")
 @widgetsHandle = Meteor.subscribe("widgets")
+@membersHandle = Meteor.subscribe("members")
+@feedbacksHandle = Meteor.subscribe("feedbacks")
+@domainsHandle = Meteor.subscribe("domains")
