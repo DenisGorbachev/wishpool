@@ -92,7 +92,7 @@ share.loadFixtures = ->
       sourceUserEmail: "honastena@pintask.me"
       sourceUserAvatarUrl: "https://www.filepicker.io/api/file/XJkV1GpKQ3KcIBbRrG4B"
       sourceUserId: "m5wg4cHCrF4myZMg3"
-      isRead: true
+      isArchived: true
       isStarred: true
       widgetId: "PintaskLandingPage"
     IWishPintaskHadMobileApp:
@@ -103,7 +103,7 @@ share.loadFixtures = ->
       sourceUserName: "Алена Виноградова"
       sourceUserEmail: "alena.vinogradova@pintask.me"
       sourceUserId: "R9L5Eh6armZGtTdur"
-      isRead: true
+      isArchived: true
       widgetId: "PintaskLandingPage"
   insertData(feedbacks, Feedbacks)
 
