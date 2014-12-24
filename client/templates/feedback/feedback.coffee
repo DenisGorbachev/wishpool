@@ -3,6 +3,8 @@ Template.feedback.helpers
     Session.equals("feedback-" + @_id + "-is-open", true)
   sourceUrlCast: ->
     @sourceUrl.replace(/^[^:]+:\/\//, "").replace(/\/$/, "")
+  sourceUserEmailSubject: ->
+    encodeURIComponent("RE: " + @text)
 
 Template.feedback.rendered = ->
 
@@ -12,5 +14,7 @@ Template.feedback.events
       return
     event.preventDefault()
     Session.set("feedback-" + @_id + "-is-open", not Session.get("feedback-" + @_id + "-is-open"))
-  "click .toggle-star": encapsulate (event, template) ->
+  "click .toggle-is-starred": encapsulate (event, template) ->
     Feedbacks.update(@_id, {$set: {isStarred: not @isStarred}})
+  "click .toggle-is-archived": encapsulate (event, template) ->
+    Feedbacks.update(@_id, {$set: {isArchived: not @isArchived}})

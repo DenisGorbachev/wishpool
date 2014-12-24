@@ -5,9 +5,15 @@
     text-decoration underline
     &:hover, &:focus, &:active
       color #333333
+  .atom::before
+    content "• "
+  .atom:first-child::before
+    content ""
 
 .feedback.list-group-item.is-open
   border-left-width 4px
+  .list-group-item-heading
+    margin-bottom 14px
   .control-icons
     visibility visible
 
