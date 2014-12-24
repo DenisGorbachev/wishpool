@@ -90,7 +90,7 @@ share.loadFixtures = ->
       sourceUrl: "https://pintask.me/board/joJjt3kusPuiTtxjk"
       sourceUserName: "Анастасия Хохлова"
       sourceUserEmail: "honastena@pintask.me"
-      sourceUserAvatarUrl: "https://www.filepicker.io/api/file/XJkV1GpKQ3KcIBbRrG4B"
+      sourceUserAvatarUrl: "/images/woman.png"
       sourceUserId: "m5wg4cHCrF4myZMg3"
       isArchived: true
       isStarred: true

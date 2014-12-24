@@ -1,6 +1,8 @@
 class Feedback
   constructor: (doc) ->
     _.extend(@, doc)
+  widget: ->
+    Widgets.findOne(@widgetId)
 
 share.Transformations.feedback = _.partial(share.transform, Feedback)
 

@@ -4,7 +4,9 @@ template(name="feedback")
       .control-icons.pull-right
         span.toggle-is-starred.fa.fa-lg.fa-fw(class="{{#if isStarred}}fa-star{{else}}fa-star-o{{/if}}")
         span.toggle-is-archived.fa.fa-lg.fa-fw(class="{{#if isArchived}}fa-check-circle{{else}}fa-check-circle-o{{/if}}")
-      | {{text}}
+      if sourceUserAvatarUrl
+        span.avatar(style="background-image: url('{{sourceUserAvatarUrl}}');")
+      | {{#if sourceUserName}}{{sourceUserName}}: {{/if}}{{text}}
     if isOpen
       .list-group-item-text
         //p.text-muted
@@ -12,9 +14,15 @@ template(name="feedback")
         // span.text-muted {{placeholder}}
         .control-icons.pull-right
           span.remove.fa.fa-lg.fa-fw.fa-trash-o
-        p.text-muted
-          span.atom: a.text-muted.passthru.source-url(href="mailto:{{sourceUserEmail}}?subject={{sourceUserEmailSubject}}" target="_blank") {{sourceUserEmail}}
-          span.atom {{sourceUserId}}
-        p.text-muted
-          span.atom: a.text-muted.passthru.source-url(href="{{sourceUrl}}" target="_blank") {{sourceUrlCast}}
+        p
+          if sourceUserEmail
+            span.atom: a.text-muted.passthru.inline-link(href="mailto:{{sourceUserEmail}}?subject={{sourceUserEmailSubject}}" target="_blank") {{sourceUserEmail}}
+          if sourceUserId
+            span.atom {{sourceUserId}}
+        p
+          if sourceUrl
+            span.atom: a.text-muted.passthru.inline-link(href="{{sourceUrl}}" target="_blank") {{sourceUrlCast}}
           span.atom(title="{{createdAt}}") {{momentFromNow createdAt}}
+          span.atom
+            | in response to
+            a.text-muted.passthru.inline-link(href="{{widget.path}}") {{label}} {{placeholder}}
