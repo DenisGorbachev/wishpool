@@ -1,22 +1,19 @@
-::selection
-  color: #222;
-  background: #D6EDFF;
+html body
+  background-color #ececec
 
-.fb-like
-  top: -4px;
+.list-group
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  border-width 0
+  .list-group-item
+    border-left-width 0
+    border-right-width 0
+    border-bottom-width 0
+    &:first-child
+      border-top-width 0
 
-.github-button-wrapper
-  padding 0 15px
-  iframe
-    padding 5px
+.control-icons > *
+  color #bbbbbb
+  &:hover, &:focus, &:active
+    color #333333
 
-.dropdown-menu > li
-  > a.text-muted
-    color #999999
-  > a:hover, > a:focus
-    color #ffffff
-
-.fb_iframe_widget
-  iframe
-    width 57px
-    height 61px

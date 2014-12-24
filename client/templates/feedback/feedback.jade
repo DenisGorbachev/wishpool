@@ -1,12 +1,15 @@
 template(name="feedback")
   a.feedback.list-group-item(href="#" class="{{#if isOpen}}is-open{{/if}}")
     p.list-group-item-heading
+      .control-icons.pull-right
+        span.toggle-star.fa.fa-lg(class="{{#if isStarred}}fa-star{{else}}fa-star-o{{/if}}")
       | {{text}}
     if isOpen
-      //p.text-muted.list-group-item-heading
-      // | {{label}}
-      // span.text-muted {{placeholder}}
-      p.text-muted
-        a.text-muted.passthru.source-url(href="{{sourceUrl}}" target="_blank") {{sourceUrlCast}}
-        | •
-        span(title="{{createdAt}}") {{momentFromNow createdAt}}
+      .list-group-item-text
+        //p.text-muted
+        // | {{label}}
+        // span.text-muted {{placeholder}}
+        p.text-muted
+          a.text-muted.passthru.source-url(href="{{sourceUrl}}" target="_blank") {{sourceUrlCast}}
+          | •
+          span(title="{{createdAt}}") {{momentFromNow createdAt}}

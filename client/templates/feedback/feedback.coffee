@@ -12,3 +12,5 @@ Template.feedback.events
       return
     event.preventDefault()
     Session.set("feedback-" + @_id + "-is-open", not Session.get("feedback-" + @_id + "-is-open"))
+  "click .toggle-star": encapsulate (event, template) ->
+    Feedbacks.update(@_id, {$set: {isStarred: not @isStarred}})

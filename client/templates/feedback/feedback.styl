@@ -1,12 +1,18 @@
 .feedback
+  .control-icons
+    visibility hidden
   .source-url
     text-decoration underline
     &:hover, &:focus, &:active
       color #333333
 
-.feedback.is-open
+.feedback.list-group-item.is-open
   border-left-width 4px
+  .control-icons
+    visibility visible
 
 a.feedback.list-group-item
   &:hover, &:focus
-    background-color inherit
+    background-color #ffffff
+    .control-icons
+      visibility visible
