@@ -76,31 +76,35 @@ share.loadFixtures = ->
       label: "I wish this page"
       placeholder: "had better graphics"
       sourceUrl: "https://wishpool.meteor.com/"
+      widgetId: "BigBrother"
     IWishYouHadBetterMarketing:
       text: "I wish you had better marketing"
       label: "I wish this page"
       placeholder: "had better graphics"
       sourceUrl: "https://wishpool.meteor.com/"
+      widgetId: "BigBrother"
     IWishPintaskHadMobileVersion:
       text: "I wish Pintask had mobile version"
       label: "I wish Pintask"
       placeholder: "..."
       sourceUrl: "https://pintask.me/board/joJjt3kusPuiTtxjk"
-      sourceName: "Анастасия Хохлова"
-      sourceEmail: "honastena@pintask.me"
-      sourceAvatarUrl: "https://www.filepicker.io/api/file/XJkV1GpKQ3KcIBbRrG4B"
-      sourceId: "m5wg4cHCrF4myZMg3"
+      sourceUserName: "Анастасия Хохлова"
+      sourceUserEmail: "honastena@pintask.me"
+      sourceUserAvatarUrl: "https://www.filepicker.io/api/file/XJkV1GpKQ3KcIBbRrG4B"
+      sourceUserId: "m5wg4cHCrF4myZMg3"
       isRead: true
       isStarred: true
+      widgetId: "PintaskLandingPage"
     IWishPintaskHadMobileApp:
       text: "I wish Pintask had mobile app"
       label: "I wish Pintask"
       placeholder: "..."
       sourceUrl: "https://pintask.me/settings"
-      sourceName: "Алена Виноградова"
-      sourceEmail: "alena.vinogradova@pintask.me"
-      sourceId: "R9L5Eh6armZGtTdur"
+      sourceUserName: "Алена Виноградова"
+      sourceUserEmail: "alena.vinogradova@pintask.me"
+      sourceUserId: "R9L5Eh6armZGtTdur"
       isRead: true
+      widgetId: "PintaskLandingPage"
   insertData(feedbacks, Feedbacks)
 
   pings =
