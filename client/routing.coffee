@@ -22,8 +22,6 @@ Router.map ->
       {
         domain: Domains.findOne(@params._id)
       }
-  @route "widgetAdd",
-    path: "/widget/add"
   @route "widget",
     path: "/widget/:_id"
     data: ->
