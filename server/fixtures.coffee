@@ -64,48 +64,46 @@ share.loadFixtures = ->
       ownerId: "DenisGorbachev"
     "PintaskLandingPage":
       name: "Pintask: Main Page"
+      label: "I wish this page"
+      placeholder: "had better graphics"
       ownerId: "DenisGorbachev"
     "PintaskApp":
       name: "Pintask: App"
+      label: "I wish Pintask"
+      placeholder: "..."
       ownerId: "DenisGorbachev"
   insertData(widgets, Widgets)
 
   feedbacks =
     IWishThisPageHadBetterGraphics:
       text: "I wish this page had better graphics"
-      label: "I wish this page"
-      placeholder: "had better graphics"
-      sourceUrl: "https://wishpool.meteor.com/"
-      widgetId: "BigBrother"
+      parentUrl: "https://wishpool.meteor.com/"
+      sourceUrl: new URI("https://wishpool-widget.meteor.com/BigBrother").toString()
     IWishYouHadBetterMarketing:
       text: "I wish you had better marketing"
-      label: "I wish this page"
-      placeholder: "had better graphics"
-      sourceUrl: "https://wishpool.meteor.com/"
-      widgetId: "BigBrother"
+      parentUrl: "https://wishpool.meteor.com/"
+      sourceUrl: new URI("https://wishpool-widget.meteor.com/BigBrother").toString()
     IWishPintaskHadMobileVersion:
       text: "I wish Pintask had mobile version"
-      label: "I wish Pintask"
-      placeholder: "..."
-      sourceUrl: "https://pintask.me/board/joJjt3kusPuiTtxjk"
-      sourceUserName: "Анастасия Хохлова"
-      sourceUserEmail: "honastena@pintask.me"
-      sourceUserAvatarUrl: "/images/woman.png"
-      sourceUserIsPaying: true
-      sourceUserId: "m5wg4cHCrF4myZMg3"
+      parentUrl: "https://pintask.me/board/joJjt3kusPuiTtxjk"
+      sourceUrl: new URI("https://wishpool-widget.meteor.com/PintaskLandingPage").setQuery(
+        userName: "Анастасия Хохлова"
+        userEmail: "honastena@pintask.me"
+        userAvatarUrl: "/images/woman.png"
+        userIsPaying: true
+        userId: "m5wg4cHCrF4myZMg3"
+      ).toString()
       isArchived: true
       isStarred: true
-      widgetId: "PintaskLandingPage"
     IWishPintaskHadMobileApp:
       text: "I wish Pintask had mobile app"
-      label: "I wish Pintask"
-      placeholder: "..."
-      sourceUrl: "https://pintask.me/settings"
-      sourceUserName: "Алена Виноградова"
-      sourceUserEmail: "alena.vinogradova@pintask.me"
-      sourceUserId: "R9L5Eh6armZGtTdur"
+      parentUrl: "https://pintask.me/settings"
+      sourceUrl: new URI("https://wishpool-widget.meteor.com/PintaskLandingPage").setQuery(
+        userName: "Алена Виноградова"
+        userEmail: "alena.vinogradova@pintask.me"
+        userId:  "R9L5Eh6armZGtTdur"
+      ).toString()
       isArchived: true
-      widgetId: "PintaskLandingPage"
   insertData(feedbacks, Feedbacks)
 
   pings =

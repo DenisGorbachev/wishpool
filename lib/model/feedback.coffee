@@ -15,19 +15,23 @@ feedbackPreSave = (userId, changes) ->
 Feedbacks.before.insert (userId, feedback) ->
   feedback._id ||= Random.id()
   now = new Date()
-  widget = Widgets.findOne(feedback.widgetId)
+  parsedSourceUrl = URI.parse(feedback.sourceUrl)
+  sourceParameters = URI.parseQuery(parsedSourceUrl.query)
+  widgetId = parsedSourceUrl.path.replace("/" , "")
+  widget = Widgets.findOne(widgetId)
   if not widget
-    throw new Match.Error("Can't find widget #" + feedback.widgetId)
+    throw new Match.Error("Can't find widget #" + widgetId)
   _.defaults(feedback,
     text: ""
     label: widget.label
     placeholder: widget.placeholder
-    sourceUrl: ""
-    sourceUserName: ""
-    sourceUserEmail: ""
-    sourceUserAvatarUrl: ""
-    sourceUserIsPaying: false
-    sourceUserId: ""
+    parentUrl: "" # parent page
+    sourceUrl: "" # iframe src
+    sourceUserName: sourceParameters.userName or ""
+    sourceUserEmail: sourceParameters.userEmail or ""
+    sourceUserAvatarUrl: sourceParameters.userAvatarUrl or ""
+    sourceUserIsPaying: sourceParameters.userIsPaying is "true"
+    sourceUserId: sourceParameters.userId or ""
     widgetId: widget._id
     domainId: null
     isStarred: false

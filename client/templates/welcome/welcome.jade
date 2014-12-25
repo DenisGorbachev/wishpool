@@ -1,6 +1,10 @@
 template(name="welcome")
   .welcome
     main#top.masthead.color1(role='main')
+      a.scrollto(href='#explore')
+        p LOST ANY CUSTOMER RECENTLY?
+        p.scrollto--arrow
+          img(src='/images/scroll_down.png', alt='scroll down arrow')
       .header
         .real-sugar
           a(href='/') WISHPOOL
@@ -16,10 +20,6 @@ template(name="welcome")
         .row
           .col-md-6.col-sm-12.col-md-offset-3.text-center
             button.btn.btn-success.btn-large.login-with-google(type='submit') Install Wishpool On Your Site
-      a.scrollto(href='#explore')
-        p LOST ANY CUSTOMER RECENTLY?
-        p.scrollto--arrow
-          img(src='/images/scroll_down.png', alt='scroll down arrow')
     #explore.container
       .section-title
         h2 Paying Customers Are Different

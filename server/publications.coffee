@@ -10,6 +10,10 @@ Meteor.publish("currentUser", ->
   )
 )
 
+Meteor.publish("widgetById", (_id) ->
+  Widgets.find(_id, {fields: {accessibleBy: 0, friendUserIds: 0}})
+)
+
 Meteor.publish("widgets", ->
   if not @userId then return []
   Widgets.find({accessibleBy: @userId}, {fields: {accessibleBy: 0, friendUserIds: 0}})

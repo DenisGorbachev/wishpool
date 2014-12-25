@@ -1,8 +1,8 @@
 Template.feedback.helpers
   isOpen: ->
     Session.equals("feedback-" + @_id + "-is-open", true)
-  sourceUrlCast: ->
-    @sourceUrl.replace(/^[^:]+:\/\//, "").replace(/\/$/, "")
+  parentUrlCast: ->
+    @parentUrl.replace(/^[^:]+:\/\//, "").replace(/\/$/, "")
   sourceUserEmailSubject: ->
     encodeURIComponent("RE: " + @text)
 

@@ -1,4 +1,11 @@
 Feedbacks.allow
+  insert: share.securityRulesWrapper (userId, feedback) ->
+    check(feedback,
+      text: String
+      parentUrl: Match.Url
+      sourceUrl: Match.Url
+    )
+    true
   update: share.securityRulesWrapper (userId, feedback, fieldNames, modifier, options) ->
     unless userId
       throw new Match.Error("Operation not allowed for unauthorized users")

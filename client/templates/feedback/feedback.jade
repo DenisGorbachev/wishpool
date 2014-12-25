@@ -24,8 +24,8 @@ template(name="feedback")
           if sourceUserIsPaying
             span.atom paying user
         p
-          if sourceUrl
-            span.atom: a.text-muted.passthru.inline-link(href="{{sourceUrl}}" target="_blank") {{sourceUrlCast}}
+          if parentUrl
+            span.atom: a.text-muted.passthru.inline-link(href="{{parentUrl}}" target="_blank") {{parentUrlCast}}
           span.atom(title="{{createdAt}}") {{momentFromNow createdAt}}
           span.atom
             | in response to
