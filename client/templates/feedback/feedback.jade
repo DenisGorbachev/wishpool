@@ -6,6 +6,8 @@ template(name="feedback")
         span.toggle-is-archived.fa.fa-lg.fa-fw(class="{{#if isArchived}}fa-check-circle{{else}}fa-check-circle-o{{/if}}" title="{{#if isArchived}}Back to New{{else}}Archive{{/if}}")
       if sourceUserAvatarUrl
         span.avatar(style="background-image: url('{{sourceUserAvatarUrl}}');")
+      if sourceUserIsPaying
+        span.text-warning(title="This is feedback from paying user") $&nbsp;
       | {{#if sourceUserName}}{{sourceUserName}}: {{/if}}{{text}}
     if isOpen
       .list-group-item-text
@@ -19,6 +21,8 @@ template(name="feedback")
             span.atom: a.text-muted.passthru.inline-link(href="mailto:{{sourceUserEmail}}?subject={{sourceUserEmailSubject}}" target="_blank") {{sourceUserEmail}}
           if sourceUserId
             span.atom {{sourceUserId}}
+          if sourceUserIsPaying
+            span.atom paying user
         p
           if sourceUrl
             span.atom: a.text-muted.passthru.inline-link(href="{{sourceUrl}}" target="_blank") {{sourceUrlCast}}

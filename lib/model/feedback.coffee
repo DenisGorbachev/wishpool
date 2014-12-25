@@ -26,6 +26,7 @@ Feedbacks.before.insert (userId, feedback) ->
     sourceUserName: ""
     sourceUserEmail: ""
     sourceUserAvatarUrl: ""
+    sourceUserIsPaying: false
     sourceUserId: ""
     widgetId: widget._id
     domainId: null

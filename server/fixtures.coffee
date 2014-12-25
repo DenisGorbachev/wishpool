@@ -91,6 +91,7 @@ share.loadFixtures = ->
       sourceUserName: "Анастасия Хохлова"
       sourceUserEmail: "honastena@pintask.me"
       sourceUserAvatarUrl: "/images/woman.png"
+      sourceUserIsPaying: true
       sourceUserId: "m5wg4cHCrF4myZMg3"
       isArchived: true
       isStarred: true
