@@ -33,10 +33,10 @@ Feedbacks.before.insert (userId, feedback) ->
     sourceUserIsPaying: sourceParameters.userIsPaying is "true"
     sourceUserId: sourceParameters.userId or ""
     widgetId: widget._id
+    ownerId: widget.ownerId
     domainId: null
     isStarred: false
     isArchived: false
-    accessibleBy: widget.accessibleBy
     updatedAt: now
     createdAt: now
   )

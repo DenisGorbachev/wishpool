@@ -15,9 +15,8 @@ Members.before.insert (userId, member) ->
   now = new Date()
   _.defaults(member,
     userId: ""
-    domainId: ""
+    widgetId: ""
     role: "observer"
-    accessibleBy: []
     updatedAt: now
     createdAt: now
   )

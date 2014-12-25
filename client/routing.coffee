@@ -33,9 +33,6 @@ Router.map ->
 
 Router.onBeforeAction ->
   if Meteor.userId()
-    if not Widgets.findOne({isNew: false})
-      _id = Widgets.insert({name: "My first widget"})
-      Router.go("/widget/" + _id)
     @next()
   else
     @render(null, {to: "header"})

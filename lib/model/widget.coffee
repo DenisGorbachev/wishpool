@@ -19,9 +19,6 @@ Widgets.before.insert (userId, widget) ->
     label: "I wish this page"
     placeholder: "had better graphics"
     css: ""
-    accessibleBy: []
-    friendUserIds: []
-    isNew: true
     ownerId: userId
     updatedAt: now
     createdAt: now
