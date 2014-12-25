@@ -16,7 +16,7 @@ template(name="welcome")
           span.typed
           | with instant feedback widget:
         section.breath.row
-          iframe(src="{{#if share.isDebug}}http://localhost:3002/BigBrother{{else}}https://wishpool-widget.meteor.com/BigBrother{{/if}}" frameborder="0" scrolling="no" allowtransparency="yes" style="display: block; margin: 0 auto; width: 500px; height: 40px")
+          iframe(src="{{#if share.isDebug}}http://localhost:3002/BigBrother{{else}}https://wishpool-widget.meteor.com/BigBrother{{/if}}" frameborder="0" scrolling="no" allowtransparency="yes" style="display: block; margin: 0 auto; width: 500px; height: 40px;")
         .row
           .col-md-6.col-sm-12.col-md-offset-3.text-center
             button.btn.btn-success.btn-large.login-with-google(type='submit') Install Wishpool On Your Site
