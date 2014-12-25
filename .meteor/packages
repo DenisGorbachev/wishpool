@@ -11,7 +11,6 @@ spiderable
 stylus
 iron:router
 accounts-google
-force-ssl
 service-configuration
 meteorhacks:fast-render
 matb33:collection-hooks
