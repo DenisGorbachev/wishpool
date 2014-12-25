@@ -22,7 +22,7 @@ Pings.before.insert (userId, ping) ->
   if ping.isNew isnt false
     Email.send(
       to: "denis.d.gorbachev@gmail.com",
-      from: "noreply@wishpool.meteor.com",
+      from: "noreply@wishpool.me",
       subject: "[Wishpool] Ping from " + ping.url,
       text: "Ping from " + ping.url
     )

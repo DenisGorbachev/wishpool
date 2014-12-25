@@ -1,6 +1,6 @@
 #!/bin/bash
 
-meteor logs wishpool.meteor.com
+meteor logs wishpool.me
 
 # SERVO=${1:-1}
 # MODULUS_TOKEN=6efdd973-40af-4c49-8759-3c2b01dda5b7 /usr/bin/expect <<EOD
