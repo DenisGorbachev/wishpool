@@ -36,7 +36,6 @@ Widgets.allow
   remove: share.securityRulesWrapper (userId, widget) ->
     unless userId
       throw new Match.Error("Operation not allowed for unauthorized users")
-    widget = Widgets.findOne(widget.widgetId)
     unless userId is widget.ownerId
       throw new Match.Error("Operation not allowed for non-owners")
     true

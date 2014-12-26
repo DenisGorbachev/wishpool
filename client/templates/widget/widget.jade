@@ -25,6 +25,13 @@ template(name="widget")
                   +input(family="widget" _id=_id property="buttonText" value=buttonText placeholder="Catchy button text" isNew=isNew)
               .form-group
                 +textarea(family="widget" _id=_id property="css" value=css placeholder="Custom CSS (hint: it's Bootstrap all the way down)" rows="6" cls="code" isNew=isNew)
+              .control-icons.dropdown
+                i.fa.fa-cog.dropdown-toggle(type='button', data-toggle='dropdown', aria-expanded='true')
+                ul.dropdown-menu(role='menu', aria-labelledby='dropdownMenu1')
+                  li(role='presentation')
+                    a.remove(role='menuitem', tabindex='-1', href='#', data-confirm='Delete widget "{{name}}"?')
+                      i.fa.fa-trash-o
+                      | Delete
         .col-xs-12.col-md-6
           .panel.panel-default
             .panel-heading

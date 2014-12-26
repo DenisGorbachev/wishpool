@@ -1,6 +1,6 @@
 Template.header.helpers
   widgets: ->
-    Widgets.find()
+    Widgets.find({}, {sort: {createdAt: 1}})
 
 Template.header.rendered = ->
 
