@@ -43,3 +43,7 @@ UI.registerHelper("not", (value) ->
 UI.registerHelper("momentFromNow", (date) ->
   moment(date).fromNow()
 )
+
+UI.registerHelper("encodeURIComponent", (value) ->
+  encodeURIComponent(value)
+)

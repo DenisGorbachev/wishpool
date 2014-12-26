@@ -9,7 +9,7 @@ Template.feedback.helpers
 Template.feedback.rendered = ->
 
 Template.feedback.events
-  "click .feedback": grab encapsulate (event, template) ->
+  "click .feedback": encapsulate (event, template) ->
     if $(event.target).closest(".passthru").length
       return
     event.preventDefault()
