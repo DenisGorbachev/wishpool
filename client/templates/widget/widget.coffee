@@ -4,4 +4,5 @@ Template.widget.helpers
 Template.widget.rendered = ->
 
 Template.widget.events
-#  'click .btn': (event, template) ->
+  'click .set-button-icon': (event, template) ->
+    event.currentTarget
