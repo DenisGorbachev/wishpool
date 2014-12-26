@@ -9,7 +9,10 @@ share.Transformations.widget = _.partial(share.transform, Widget)
   transform: if Meteor.isClient then share.Transformations.widget else null
 )
 
-generateSrc = (_id) ->
+generateQuery = ->
+  "?userName=&userEmail=&userAvatarUrl=&userIsPaying=&userId="
+
+generateUrl = (_id) ->
   Meteor.settings.public.widgetUrl + '/' + _id
 
 generateCode = (src) ->
@@ -27,7 +30,7 @@ Widgets.before.insert (userId, widget) ->
     buttonIcon: "fa fa-check"
     buttonText: ""
     css: ""
-    code: generateCode(generateSrc(widget._id))
+    code: generateCode(generateUrl(widget._id) + generateQuery())
     ownerId: userId
     updatedAt: now
     createdAt: now
@@ -44,10 +47,11 @@ Widgets.before.update (userId, widget, fieldNames, modifier, options) ->
 
 Widgets.after.update (userId, widget, fieldNames, modifier, options) ->
   $set = {}
-  src = generateSrc(widget._id)
-  if widget.code.indexOf(src) is -1
+  url = generateUrl(widget._id)
+  if widget.code.indexOf(url) is -1
+    src = url + generateQuery()
     codeWithSrc = widget.code.replace(/src=\"[^\"]*\"/, 'src="' + src + '"')
-    if codeWithSrc is widget.code # no replacement took place
+    if codeWithSrc is widget.code # no replacement took place (e.g. src attribute not found in code)
       codeWithSrc = generateCode(src) # regenerate from scratch
     $set.code = codeWithSrc
     if Meteor.isClient then $("[name='code']").val($set.code) # Meteor doesn't reactively update focused textarea

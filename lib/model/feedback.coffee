@@ -30,7 +30,7 @@ Feedbacks.before.insert (userId, feedback) ->
     sourceUserName: sourceParameters.userName or ""
     sourceUserEmail: sourceParameters.userEmail or ""
     sourceUserAvatarUrl: sourceParameters.userAvatarUrl or ""
-    sourceUserIsPaying: sourceParameters.userIsPaying is "true"
+    sourceUserIsPaying: sourceParameters.userIsPaying in ["true", "1", "yes", "of course"]
     sourceUserId: sourceParameters.userId or ""
     widgetId: widget._id
     ownerId: widget.ownerId
