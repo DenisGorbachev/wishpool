@@ -35,6 +35,6 @@ template(name="widget")
                 | {{{html}}}
               form(role="form")
               .form-group
-                input.form-control(value="{{html}}" readonly="readonly")
+                textarea.code-textarea.form-control(rows="4" readonly="readonly") {{html}}
               button.btn.btn-success.copy-to-clipboard(type="button") Copy to clipboard
               | &nbsp; and paste on your site
