@@ -22,7 +22,7 @@ template(name="widget")
                     button.set-button-icon.btn.btn-default.fa.fa-reply(class="{{#if condition buttonIcon 'is' 'fa fa-reply'}}active{{/if}}" data-button-icon="fa fa-reply")
                     button.set-button-icon.btn.btn-default.fa.fa-rocket(class="{{#if condition buttonIcon 'is' 'fa fa-rocket'}}active{{/if}}" data-button-icon="fa fa-rocket")
                     button.set-button-icon.btn.btn-default(style="margin-right:10px; max-width:inherit;" class="{{#if condition buttonIcon 'is' ''}}active{{/if}}" data-button-icon="") Text only
-                  input.form-control(placeholder="Button text" value=buttonText)
+                  +input(family="widget" _id=_id property="buttonText" value=buttonText placeholder="Button text" isNew=isNew)
               .form-group
                 +textarea(family="widget" _id=_id property="css" value=css placeholder="Custom CSS" rows="6" cls="code" isNew=isNew)
         .col-xs-12.col-md-6

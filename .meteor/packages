@@ -18,3 +18,4 @@ percolatestudio:percolatestudio-mixpanel
 percolatestudio:percolatestudio-migrations
 email
 accounts-password
+force-ssl
