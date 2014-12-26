@@ -17,4 +17,15 @@ template(name="index")
           .list-group
             each archived
               +feedback
+        if not starred.count
+          if not new.count
+            if not archived.count
+              h5 No feedback received yet
+              p Please install Wishpool widget on your site. You'll catch something soon :)
+              p If you have any questions, just <a href="mailto:denis.d.gorbachev@gmail.com">shoot me an email</a>.
+  if not starred.count
+    if not new.count
+      if not archived.count
+        +widget(widgetTemplateContext)
+
 

@@ -9,7 +9,7 @@ template(name="widget")
             .panel-body
               form
               .form-group
-                +input(family="widget" _id=_id property="name" value=name placeholder="Widget name" isNew=isNew)
+                +input(family="widget" _id=_id property="name" value=name placeholder="Awesome widget name" isNew=isNew)
               .form-group
                 +input(family="widget" _id=_id property="label" value=label placeholder="I wish this page" isNew=isNew)
               .form-group
@@ -22,9 +22,9 @@ template(name="widget")
                     button.set-button-icon.btn.btn-default.fa.fa-reply(class="{{#if condition buttonIcon 'is' 'fa fa-reply'}}active{{/if}}" data-button-icon="fa fa-reply")
                     button.set-button-icon.btn.btn-default.fa.fa-rocket(class="{{#if condition buttonIcon 'is' 'fa fa-rocket'}}active{{/if}}" data-button-icon="fa fa-rocket")
                     button.set-button-icon.btn.btn-default(style="margin-right:10px; max-width:inherit;" class="{{#if condition buttonIcon 'is' ''}}active{{/if}}" data-button-icon="") Text only
-                  +input(family="widget" _id=_id property="buttonText" value=buttonText placeholder="Button text" isNew=isNew)
+                  +input(family="widget" _id=_id property="buttonText" value=buttonText placeholder="Catchy button text" isNew=isNew)
               .form-group
-                +textarea(family="widget" _id=_id property="css" value=css placeholder="Custom CSS" rows="6" cls="code" isNew=isNew)
+                +textarea(family="widget" _id=_id property="css" value=css placeholder="Custom CSS (hint: it's Bootstrap all the way down)" rows="6" cls="code" isNew=isNew)
         .col-xs-12.col-md-6
           .panel.panel-default
             .panel-heading

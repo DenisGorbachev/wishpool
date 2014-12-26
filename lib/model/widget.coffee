@@ -43,11 +43,17 @@ Widgets.before.update (userId, widget, fieldNames, modifier, options) ->
   true
 
 Widgets.after.update (userId, widget, fieldNames, modifier, options) ->
+  $set = {}
   src = generateSrc(widget._id)
   if widget.code.indexOf(src) is -1
     codeWithSrc = widget.code.replace(/src=\"[^\"]*\"/, 'src="' + src + '"')
     if codeWithSrc is widget.code # no replacement took place
       codeWithSrc = generateCode(src) # regenerate from scratch
-    Widgets.update(widget._id, {$set: {code: codeWithSrc}})
-    if Meteor.isClient then $("[name='code']").val(codeWithSrc) # Meteor doesn't reactively update focused textarea
+    $set.code = codeWithSrc
+    if Meteor.isClient then $("[name='code']").val($set.code) # Meteor doesn't reactively update focused textarea
+  if not widget.name
+    $set.name = "Lovely midget"
+    if Meteor.isClient then $("[name='name']").val($set.name) # Meteor doesn't reactively update focused input
+  if not _.isEmpty($set)
+    Widgets.update(widget._id, {$set: $set})
   true

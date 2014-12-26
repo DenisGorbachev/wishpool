@@ -36,6 +36,10 @@ UI.registerHelper("condition", (v1, operator, v2, options) ->
       throw "Undefined operator \"" + operator + "\""
 )
 
+UI.registerHelper("not", (value) ->
+  not value
+)
+
 UI.registerHelper("momentFromNow", (date) ->
   moment(date).fromNow()
 )

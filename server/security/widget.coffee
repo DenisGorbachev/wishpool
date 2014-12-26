@@ -6,6 +6,8 @@ Widgets.allow
       name: String
       label: String
       placeholder: String
+      buttonIcon: String
+      buttonText: String
       css: String
       code: String
       ownerId: Match.UserId

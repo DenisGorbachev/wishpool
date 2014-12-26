@@ -1,4 +1,8 @@
 Template.index.helpers
+  widgetTemplateContext: ->
+    {
+      widget: Widgets.findOne({}, {sort: {createdAt: 1}})
+    }
 
 Template.index.rendered = ->
 

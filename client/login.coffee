@@ -15,6 +15,7 @@
       Meteor.users.update({_id: user._id}, modifier)
     _.defer ->
       if user.isNew
-        _id = Widgets.insert({name: "My first widget"})
-        Router.go("/widget/" + _id)
-        Meteor.users.update(user._id, {$set: {isNew: false}})
+        Widgets.insert({name: "My first widget"}, (error, _id) ->
+          Meteor.users.update(Meteor.userId(), {$set: {isNew: false}})
+          Router.go("/widget/" + _id)
+        )
