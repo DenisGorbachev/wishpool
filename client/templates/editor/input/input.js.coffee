@@ -5,16 +5,23 @@ Template.input.helpers
     not (if _.isBoolean(@enabled) then @enabled else true)
 
 Template.input.rendered = ->
-  editor = @firstNode
-  $editor = $(editor)
+  _id = @data._id
+  property = @data.property
+  element = @firstNode
+  $element = $(element)
   editor = EditorCache.editors[@data.family]
+  @autorun ->
+    if element isnt document.activeElement
+      object = editor.collection.findOne(_id)
+      value = object[property]
+      $element.val(value)
   if editor.isEditedProperty(@data._id, @data.property)
     $activeElement = $(document.activeElement)
-    if $editor.get(0) isnt document.activeElement and (not $activeElement.closest("textarea, input").length or $activeElement.attr("data-family") and $activeElement.attr("data-family") is $editor.attr("data-family"))
+    if $element.get(0) isnt document.activeElement and (not $activeElement.closest("textarea, input").length or $activeElement.attr("data-family") and $activeElement.attr("data-family") is $element.attr("data-family"))
       if @data.isNew
-        $editor.select()
+        $element.select()
       else
-        $editor.focusToEnd()
+        $element.focusToEnd()
 
 Template.input.events
   "focus .property-editor": encapsulate (event, template) ->
