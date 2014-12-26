@@ -1,5 +1,5 @@
 {
-  "baseUrl": "https://wishpool.meteor.com",
+  "baseUrl": "http://wishpool.me",
   "google": {
     "secret": ""
   },

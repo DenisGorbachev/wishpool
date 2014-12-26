@@ -77,16 +77,16 @@ share.loadFixtures = ->
   feedbacks =
     IWishThisPageHadBetterGraphics:
       text: "I wish this page had better graphics"
-      parentUrl: "https://wishpool.meteor.com/"
-      sourceUrl: new URI("https://wishpool-widget.meteor.com/BigBrother").toString()
+      parentUrl: "http://wishpool.me/"
+      sourceUrl: new URI("http://widget.wishpool.me/BigBrother").toString()
     IWishYouHadBetterMarketing:
       text: "I wish you had better marketing"
-      parentUrl: "https://wishpool.meteor.com/"
-      sourceUrl: new URI("https://wishpool-widget.meteor.com/BigBrother").toString()
+      parentUrl: "http://wishpool.me/"
+      sourceUrl: new URI("http://widget.wishpool.me/BigBrother").toString()
     IWishPintaskHadMobileVersion:
       text: "I wish Pintask had mobile version"
       parentUrl: "https://pintask.me/board/joJjt3kusPuiTtxjk"
-      sourceUrl: new URI("https://wishpool-widget.meteor.com/PintaskLandingPage").setQuery(
+      sourceUrl: new URI("http://widget.wishpool.me/PintaskLandingPage").setQuery(
         userName: "Анастасия Хохлова"
         userEmail: "honastena@pintask.me"
         userAvatarUrl: "/images/woman.png"
@@ -98,7 +98,7 @@ share.loadFixtures = ->
     IWishPintaskHadMobileApp:
       text: "I wish Pintask had mobile app"
       parentUrl: "https://pintask.me/settings"
-      sourceUrl: new URI("https://wishpool-widget.meteor.com/PintaskLandingPage").setQuery(
+      sourceUrl: new URI("http://widget.wishpool.me/PintaskLandingPage").setQuery(
         userName: "Алена Виноградова"
         userEmail: "alena.vinogradova@pintask.me"
         userId:  "R9L5Eh6armZGtTdur"
