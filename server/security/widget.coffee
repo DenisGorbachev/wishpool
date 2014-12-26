@@ -19,6 +19,11 @@ Widgets.allow
       throw new Match.Error("Operation not allowed for users without access")
     $set =
       name: Match.Optional(String)
+      label: Match.Optional(String)
+      placeholder: Match.Optional(String)
+      buttonIcon: Match.Optional(String)
+      buttonText: Match.Optional(String)
+      css: Match.Optional(String)
       updatedAt: Date
     check(modifier,
       $set: $set # updatedAt is non-optional
