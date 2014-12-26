@@ -17,12 +17,12 @@ template(name="widget")
               .form-group
                 .input-group
                   span.input-group-btn.btn-group-sm
-                    button.btn.btn-default.fa.fa-paper-plane(class="{{#if condition buttonIcon 'is' 'fa fa-paper-plane'}}active{{/if}}")
-                    button.btn.btn-default.fa.fa-check(class="{{#if condition buttonIcon 'is' 'fa fa-check'}}active{{/if}}")
-                    button.btn.btn-default.fa.fa-reply(class="{{#if condition buttonIcon 'is' 'fa fa-reply'}}active{{/if}}")
-                    button.btn.btn-default.fa.fa-rocket(class="{{#if condition buttonIcon 'is' 'fa fa-rocket'}}active{{/if}}")
-                    button.btn.btn-default(style="margin-right:10px; max-width:inherit;" class="{{#if condition buttonIcon 'is' ''}}active{{/if}}") Text only
-                  input.form-control(placeholder="Button text")
+                    button.set-button-icon.btn.btn-default.fa.fa-paper-plane(class="{{#if condition buttonIcon 'is' 'fa fa-paper-plane'}}active{{/if}}" data-button-icon="fa fa-paper-plane")
+                    button.set-button-icon.btn.btn-default.fa.fa-check(class="{{#if condition buttonIcon 'is' 'fa fa-check'}}active{{/if}}" data-button-icon="fa fa-check")
+                    button.set-button-icon.btn.btn-default.fa.fa-reply(class="{{#if condition buttonIcon 'is' 'fa fa-reply'}}active{{/if}}" data-button-icon="fa fa-reply")
+                    button.set-button-icon.btn.btn-default.fa.fa-rocket(class="{{#if condition buttonIcon 'is' 'fa fa-rocket'}}active{{/if}}" data-button-icon="fa fa-rocket")
+                    button.set-button-icon.btn.btn-default(style="margin-right:10px; max-width:inherit;" class="{{#if condition buttonIcon 'is' ''}}active{{/if}}" data-button-icon="") Text only
+                  input.form-control(placeholder="Button text" value=buttonText)
               .form-group
                 +textarea(family="widget" _id=_id property="css" value=css placeholder="Custom CSS" rows="6" cls="code" isNew=isNew)
         .col-xs-12.col-md-6
