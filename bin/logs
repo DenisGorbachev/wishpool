@@ -1,11 +1,11 @@
 #!/bin/bash
 
-meteor logs wishpool.me
+MODULUS_TOKEN=6cf2f8ba-8f01-4298-9331-3162adedb2dd modulus project logs --project-name=wishpool.me
 
 # SERVO=${1:-1}
-# MODULUS_TOKEN=6efdd973-40af-4c49-8759-3c2b01dda5b7 /usr/bin/expect <<EOD
+# MODULUS_TOKEN=6cf2f8ba-8f01-4298-9331-3162adedb2dd /usr/bin/expect <<EOD
 # set timeout 60
-# spawn modulus project logs --project-name=wishpool.com
+# spawn modulus project logs --project-name=wishpool.me
 # match_max 1000000
 # expect "servo "
 # send "${SERVO}\n"

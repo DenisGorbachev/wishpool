@@ -1,8 +1,8 @@
 #!/bin/bash
 
 DIRNAME=$(cd `dirname $0` && pwd)
-USERNAME=$(<~/.meteor/wishpool.com.username)
-PASSWORD=$(<~/.meteor/wishpool.com.password)
+USERNAME=$(<~/.meteor/wishpool.me.username)
+PASSWORD=$(<~/.meteor/wishpool.me.password)
 HOST="proximus.modulusmongo.net"
 PORT="27017"
 DB="Y2petuqe"
