@@ -19,6 +19,8 @@ Widgets.before.insert (userId, widget) ->
     label: "I wish this page"
     placeholder: "had better graphics"
     css: ""
+    buttonIcon: "fa fa-check"
+    buttonText: ""
     ownerId: userId
     updatedAt: now
     createdAt: now
