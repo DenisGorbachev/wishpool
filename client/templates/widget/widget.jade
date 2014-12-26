@@ -17,15 +17,14 @@ template(name="widget")
               .form-group
                 .input-group
                   span.input-group-btn.btn-group-sm
-                    button.btn.btn-default.fa.fa-paper-plane(class="")
-                    //TODO make active switchable
-                    button.btn.btn-default.fa.fa-check(class="")
-                    button.btn.btn-default.fa.fa-reply(class="")
-                    button.btn.btn-default.fa.fa-rocket(class="")
-                    button.btn.btn-default(style="margin-right:10px; max-width:inherit;" class="active") Text
-                  input.form-control(type='text', placeholder='Send')
+                    button.btn.btn-default.fa.fa-paper-plane(class="{{#if condition buttonIcon 'is' 'fa fa-paper-plane'}}active{{/if}}")
+                    button.btn.btn-default.fa.fa-check(class="{{#if condition buttonIcon 'is' 'fa fa-check'}}active{{/if}}")
+                    button.btn.btn-default.fa.fa-reply(class="{{#if condition buttonIcon 'is' 'fa fa-reply'}}active{{/if}}")
+                    button.btn.btn-default.fa.fa-rocket(class="{{#if condition buttonIcon 'is' 'fa fa-rocket'}}active{{/if}}")
+                    button.btn.btn-default(style="margin-right:10px; max-width:inherit;" class="{{#if condition buttonIcon 'is' ''}}active{{/if}}") Text only
+                  input.form-control(placeholder="Button text")
               .form-group
-                textarea(placeholder="Paste custom CSS here", rows="6").form-control
+                textarea(placeholder="Custom CSS", rows="6").form-control
         .col-xs-12.col-md-6
           .panel.panel-default
             .panel-heading
