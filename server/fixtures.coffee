@@ -66,11 +66,15 @@ share.loadFixtures = ->
       name: "Pintask: Main Page"
       label: "I wish this page"
       placeholder: "had better graphics"
+      buttonIcon: "fa fa-paper-plane"
+      buttonText: "Send me"
       ownerId: "DenisGorbachev"
     "PintaskApp":
       name: "Pintask: App"
       label: "I wish Pintask"
       placeholder: "..."
+      buttonIcon: "fa fa-rocket"
+      buttonText: "Up we go!"
       ownerId: "DenisGorbachev"
   insertData(widgets, Widgets)
 
