@@ -22,7 +22,6 @@ Feedbacks.allow
   remove: share.securityRulesWrapper (userId, feedback) ->
     unless userId
       throw new Match.Error("Operation not allowed for unauthorized users")
-    widget = Widgets.findOne(feedback.widgetId)
-    unless userId is widget.ownerId
-      throw new Match.Error("Operation not allowed for non-owners of source widget")
+    unless userId in feedback.accessibleBy
+      throw new Match.Error("Operation not allowed for users without access to object")
     true
