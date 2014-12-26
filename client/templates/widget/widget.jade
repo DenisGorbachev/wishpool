@@ -11,9 +11,9 @@ template(name="widget")
               .form-group
                 +input(family="widget" _id=_id property="name" value=name placeholder="Widget name" isNew=isNew)
               .form-group
-                input(placeholder="I wish this page" value="{{widget.label}}").form-control
+                +input(family="widget" _id=_id property="label" value=label placeholder="I wish this page" isNew=isNew)
               .form-group
-                input(placeholder="...had better graphics" value="{{widget.placeholder}}").form-control
+                +input(family="widget" _id=_id property="placeholder" value=placeholder placeholder="had better graphics" isNew=isNew)
               .form-group
                 .input-group
                   span.input-group-btn.btn-group-sm
@@ -24,18 +24,17 @@ template(name="widget")
                     button.btn.btn-default(style="margin-right:10px; max-width:inherit;" class="{{#if condition buttonIcon 'is' ''}}active{{/if}}") Text only
                   input.form-control(placeholder="Button text")
               .form-group
-                textarea(placeholder="Custom CSS", rows="6").form-control
+                +textarea(family="widget" _id=_id property="css" value=css placeholder="Custom CSS" rows="6" isNew=isNew)
         .col-xs-12.col-md-6
           .panel.panel-default
             .panel-heading
               h4 Step 2. Install on your site
             .panel-body
-              .panel
+              .preview.well.well-lg
                 // Add scaling if possible
-                iframe(src="https://wishpool-widget.meteor.com/" height="40px" frameborder="0" style="display: block; margin: 0 auto;")
+                | {{{html}}}
               form(role="form")
               .form-group
-                textarea(rows="4").form-control
-                  | some code
+                input.form-control(value="{{html}}" readonly="readonly")
               button.btn.btn-success.copy-to-clipboard(type="button") Copy to clipboard
               | &nbsp; and paste on your site

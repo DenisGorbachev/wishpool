@@ -2,6 +2,8 @@ class Widget
   constructor: (doc) ->
     _.extend(@, doc)
   path: -> "/widget/" + @_id
+  html: ->
+    '<iframe src="' + Meteor.settings.public.widgetUrl + '/' + @_id + '" frameborder="0" scrolling="no" allowtransparency="yes" style="display: block; margin: 0 auto; width: 100%; height: 40px;"></iframe>'
 
 share.Transformations.widget = _.partial(share.transform, Widget)
 

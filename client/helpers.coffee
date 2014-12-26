@@ -2,6 +2,10 @@ UI.registerHelper("share", ->
   share
 )
 
+UI.registerHelper("Settings", ->
+  Meteor.settings
+)
+
 UI.registerHelper("Router", ->
   Router
 )

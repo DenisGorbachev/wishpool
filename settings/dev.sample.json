@@ -9,6 +9,7 @@
   },
   "public": {
     "isDebug": true,
+    "widgetUrl": "http://localhost:3002",
     "facebook": {
       "appId": ""
     },
