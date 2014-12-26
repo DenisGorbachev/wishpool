@@ -13,15 +13,16 @@ template(name="widget")
               input(placeholder="I wish this page" value="{{widget.label}}").form-control
             .form-group
               input(placeholder="...had better graphics" value="{{widget.placeholder}}").form-control
-            .form-group.form-inline
-              .btn-group.btn-group-md
-                button.btn.btn-default.btn-sm.btn-group.fa.fa-paper-plane
-                //TODO make active switchable
-                button.btn.btn-default.btn-sm.btn-group.fa.fa-check
-                button.btn.btn-default.btn-sm.btn-group.fa.fa-reply
-                button.btn.btn-default.btn-sm.btn-group.fa.fa-rocket
-                button.btn.btn-default.btn-sm.btn-group.fa.active Text
-              input(placeholder="Send").form-control
+            .form-group
+              .input-group
+                span.input-group-btn.btn-group-sm
+                  button.btn.btn-default.fa.fa-paper-plane(class="")
+                  //TODO make active switchable
+                  button.btn.btn-default.fa.fa-check(class="")
+                  button.btn.btn-default.fa.fa-reply(class="")
+                  button.btn.btn-default.fa.fa-rocket(class="")
+                  button.btn.btn-default(style="margin-right:10px; max-width:inherit;" class="active") Text
+                input.form-control(type='text', placeholder='Send')
             .form-group
               textarea(placeholder="Paste custom CSS here", rows="6").form-control
       .col-xs-12.col-md-6
@@ -29,6 +30,9 @@ template(name="widget")
           .panel-heading
             h4 Step 2. Apply to your site
           .panel-body
+            .panel
+              // Add scaling if possible
+              iframe(src="https://wishpool-widget.meteor.com/" height="40px" frameborder="0" style="display: block; margin: 0 auto;")
             form(role="form")
             .form-group
               textarea(rows="4").form-control
