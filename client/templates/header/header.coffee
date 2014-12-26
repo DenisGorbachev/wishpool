@@ -5,4 +5,8 @@ Template.header.helpers
 Template.header.rendered = ->
 
 Template.header.events
-#  "click .selector": (event, template) ->
+  "click .add-widget": grab encapsulate (event, template) ->
+    _id = Widgets.insert({})
+    widget = Widgets.findOne(_id)
+    $(event.currentTarget).closest(".dropdown-menu").prev(".dropdown-toggle").dropdown("toggle")
+    Router.go(widget.path())
