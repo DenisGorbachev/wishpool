@@ -7,6 +7,7 @@ Widgets.allow
       label: String
       placeholder: String
       css: String
+      code: String
       ownerId: Match.UserId
       updatedAt: Date
       createdAt: Date
@@ -24,6 +25,7 @@ Widgets.allow
       buttonIcon: Match.Optional(String)
       buttonText: Match.Optional(String)
       css: Match.Optional(String)
+      code: Match.Optional(String)
       updatedAt: Date
     check(modifier,
       $set: $set # updatedAt is non-optional

@@ -1,6 +1,6 @@
 template(name="widget")
-  with widget
-    .widget.container
+  .widget.container
+    with widget
       .row
         .col-xs-12.col-md-6
           .panel.panel-default
@@ -24,7 +24,7 @@ template(name="widget")
                     button.btn.btn-default(style="margin-right:10px; max-width:inherit;" class="{{#if condition buttonIcon 'is' ''}}active{{/if}}") Text only
                   input.form-control(placeholder="Button text")
               .form-group
-                +textarea(family="widget" _id=_id property="css" value=css placeholder="Custom CSS" rows="6" isNew=isNew)
+                +textarea(family="widget" _id=_id property="css" value=css placeholder="Custom CSS" rows="6" cls="code" isNew=isNew)
         .col-xs-12.col-md-6
           .panel.panel-default
             .panel-heading
@@ -32,9 +32,9 @@ template(name="widget")
             .panel-body
               .preview.well.well-lg
                 // Add scaling if possible
-                | {{{html}}}
+                | {{{code}}}
               form(role="form")
               .form-group
-                textarea.code-textarea.form-control(rows="4" readonly="readonly") {{html}}
+                +textarea(family="widget" id="" _id=_id property="code" value=code placeholder="Widget code" rows="4" cls="code" isNew=isNew)
               button.btn.btn-success.copy-to-clipboard(type="button") Copy to clipboard
               | &nbsp; and paste on your site

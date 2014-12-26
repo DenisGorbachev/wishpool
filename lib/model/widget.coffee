@@ -2,14 +2,18 @@ class Widget
   constructor: (doc) ->
     _.extend(@, doc)
   path: -> "/widget/" + @_id
-  html: ->
-    '<iframe src="' + Meteor.settings.public.widgetUrl + '/' + @_id + '" frameborder="0" scrolling="no" allowtransparency="yes" style="display: block; margin: 0 auto; width: 100%; height: 40px;"></iframe>'
 
 share.Transformations.widget = _.partial(share.transform, Widget)
 
 @Widgets = new Mongo.Collection("widgets",
   transform: if Meteor.isClient then share.Transformations.widget else null
 )
+
+generateSrc = (_id) ->
+  Meteor.settings.public.widgetUrl + '/' + _id
+
+generateCode = (src) ->
+  '<iframe src="' + src + '" frameborder="0" scrolling="no" allowtransparency="yes" style="display: block; margin: 0 auto; width: 100%; height: 40px;"></iframe>'
 
 widgetPreSave = (userId, changes) ->
 
@@ -23,6 +27,7 @@ Widgets.before.insert (userId, widget) ->
     buttonIcon: "fa fa-check"
     buttonText: ""
     css: ""
+    code: generateCode(generateSrc(widget._id))
     ownerId: userId
     updatedAt: now
     createdAt: now
@@ -35,4 +40,14 @@ Widgets.before.update (userId, widget, fieldNames, modifier, options) ->
   modifier.$set = modifier.$set or {}
   modifier.$set.updatedAt = modifier.$set.updatedAt or now
   widgetPreSave.call(@, userId, modifier.$set || {})
+  true
+
+Widgets.after.update (userId, widget, fieldNames, modifier, options) ->
+  src = generateSrc(widget._id)
+  if widget.code.indexOf(src) is -1
+    codeWithSrc = widget.code.replace(/src=\"[^\"]*\"/, 'src="' + src + '"')
+    if codeWithSrc is widget.code # no replacement took place
+      codeWithSrc = generateCode(src) # regenerate from scratch
+    Widgets.update(widget._id, {$set: {code: codeWithSrc}})
+    if Meteor.isClient then $("[name='code']").val(codeWithSrc) # Meteor doesn't reactively update focused textarea
   true

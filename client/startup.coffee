@@ -12,3 +12,7 @@ window.fbAsyncInit = ->
     appId: Meteor.settings.public.facebook.appId
     xfbml: true
   )
+
+ZeroClipboard.config(
+  swfPath: "/ZeroClipboard.swf"
+)
