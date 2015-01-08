@@ -5,7 +5,7 @@ USERNAME=$(<~/.meteor/wishpool.me.username)
 PASSWORD=$(<~/.meteor/wishpool.me.password)
 HOST="proximus.modulusmongo.net"
 PORT="27017"
-DB="Y2petuqe"
+DB="gaXyho3v"
 OUT_DIR="/tmp"
 
 mongo -u $USERNAME -p $PASSWORD $HOST:$PORT/$DB

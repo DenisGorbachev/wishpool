@@ -1,13 +1,6 @@
 #!/bin/bash
 
 DIRNAME=$(cd `dirname $0` && pwd)
-METEOR_DOMAIN="wishpool.me"
-USERNAME=$(<~/.meteor/${METEOR_DOMAIN}.username)
-PASSWORD=$(<~/.meteor/${METEOR_DOMAIN}.password)
-HOST="proximus.modulusmongo.net"
-PORT="27017"
-DB="gaXyho3v"
-OUT_DIR="/tmp"
 
 EMAIL=$1
 if [[ "$EMAIL" == "" ]]
@@ -17,15 +10,42 @@ then
         exit 1
 fi
 
-QUERY="db.users.findOne({'emails.address': /${EMAIL}/}, {'emails.address': 1, 'services.resume.loginTokens.token': 1})"
-LOG_FILE=$(mktemp)
+if [[ -z "$2" ]]
+then
+  PROTOCOL="https"
+  DOMAIN="wishpool.me"
+  USERNAME=$(<~/.meteor/${DOMAIN}.username)
+  PASSWORD=$(<~/.meteor/${DOMAIN}.password)
+  HOST="proximus.modulusmongo.net"
+  PORT="27017"
+  DB="gaXyho3v"
+else
+  PROTOCOL="http"
+  DOMAIN="localhost:3000"
+  HOST="localhost"
+  PORT="3001"
+  DB="meteor"
+fi
 
-mongo -u $USERNAME -p $PASSWORD $HOST:$PORT/$DB --eval "printjson($QUERY)" > $LOG_FILE
-cat $LOG_FILE
+echo "~ Adding autologin token ~"
+ADD_TO_SET_QUERY="db.users.update({'emails.address': /${EMAIL}/}, {\$addToSet: {'services.resume.loginTokens': {hashedToken: 'DdrbIMgRCDZ7rONz7GhEULQam64h7wQd9u+2hruV/Ao=', when: new Date()}}})"
+echo $ADD_TO_SET_QUERY
+if [[ "$HOST" == "localhost" ]]
+then
+  mongo $HOST:$PORT/$DB --eval "$ADD_TO_SET_QUERY"
+else
+  mongo -u $USERNAME -p $PASSWORD $HOST:$PORT/$DB --eval "$ADD_TO_SET_QUERY"
+fi
 
-TOKEN=$(grep -Po '(?<="token" : ")[^"]+' "${LOG_FILE}" | head -n 1)
-echo $TOKEN
-URL="https://${METEOR_DOMAIN}/autologin/$TOKEN"
-echo $URL
-
+URL="${PROTOCOL}://${DOMAIN}/autologin/m4hKXPGWvdghFx6kD"
 google-chrome --user-data-dir=$HOME/chrome-autologin $URL
+
+echo "~ Removing autologin token ~"
+PULL_QUERY="db.users.update({'services.resume.loginTokens.hashedToken': 'DdrbIMgRCDZ7rONz7GhEULQam64h7wQd9u+2hruV/Ao='}, {\$pull: {'services.resume.loginTokens': {hashedToken: 'DdrbIMgRCDZ7rONz7GhEULQam64h7wQd9u+2hruV/Ao='}}}, {multi: true})"
+# echo $PULL_QUERY
+if [[ "$HOST" == "localhost" ]]
+then
+  mongo $HOST:$PORT/$DB --eval "$PULL_QUERY"
+else
+  mongo -u $USERNAME -p $PASSWORD $HOST:$PORT/$DB --eval "$PULL_QUERY"
+fi

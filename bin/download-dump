@@ -5,7 +5,7 @@ USERNAME=$(<~/.meteor/wishpool.me.username)
 PASSWORD=$(<~/.meteor/wishpool.me.password)
 HOST="proximus.modulusmongo.net"
 PORT="27017"
-DB="Y2petuqe"
+DB="gaXyho3v"
 OUT_DIR="/tmp"
 
 echo "mongodump --host $HOST:$PORT -u $USERNAME -p \"${PASSWORD}\" -d $DB -c {collection_name} -o $OUT_DIR for all collections except 'system.users'"
