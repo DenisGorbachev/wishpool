@@ -28,6 +28,12 @@ Router.map ->
       {
         widget: Widgets.findOne(@params._id)
       }
+  @route "/autologin/:token",
+    name: "autologin"
+    onBeforeAction: ->
+      Meteor.loginWithToken(@params.token)
+      Pintask.autologinDetected = true
+      Router.go("home")
 
 Router.onBeforeAction ->
   if Meteor.userId()
