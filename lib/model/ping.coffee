@@ -14,7 +14,7 @@ Pings.before.insert (userId, ping) ->
   ping._id = ping._id || Random.id()
   now = new Date()
   _.defaults(ping,
-    url: ""
+    hostname: ""
     updatedAt: now
     createdAt: now
   )
@@ -23,8 +23,8 @@ Pings.before.insert (userId, ping) ->
     Email.send(
       to: "denis.d.gorbachev@gmail.com",
       from: "noreply@wishpool.me",
-      subject: "[Wishpool] Ping from " + ping.url,
-      text: "Ping from " + ping.url
+      subject: "[Wishpool] Ping from " + ping.hostname,
+      text: "Ping from " + ping.hostname
     )
   true
 
