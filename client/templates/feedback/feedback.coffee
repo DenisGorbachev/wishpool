@@ -14,11 +14,11 @@ Template.feedback.events
       return
     event.preventDefault()
     Session.set("feedback-" + @_id + "-is-open", not Session.get("feedback-" + @_id + "-is-open"))
-  "click .toggle-is-starred": encapsulate (event, template) ->
+  "click .toggle-is-starred": grab encapsulate (event, template) ->
     Feedbacks.update(@_id, {$set: {isStarred: not @isStarred}})
-  "click .toggle-is-archived": encapsulate (event, template) ->
+  "click .toggle-is-archived": grab encapsulate (event, template) ->
     Feedbacks.update(@_id, {$set: {isArchived: not @isArchived}})
-  "click .remove": encapsulate (event, template) ->
+  "click .remove": grab encapsulate (event, template) ->
     $link = $(event.currentTarget)
     if (confirm($link.attr("data-confirm")))
       Feedbacks.remove(@_id)
