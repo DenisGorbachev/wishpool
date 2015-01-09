@@ -1,6 +1,15 @@
 Template.textarea.helpers
   placeholder: ->
     @placeholder or i18n.t(@placeholderI18n)
+  value: ->
+    $element = $("[data-family='" + @family + "'][data-object-id='" + @_id + "'][name='" + @property + "']")
+    element = $element.get(0)
+    if not element or element isnt document.activeElement
+      editor = EditorCache.editors[@family]
+      object = editor.collection.findOne(@_id)
+      object[@property]
+    else
+      $element.val()
 
 Template.textarea.rendered = ->
   _id = @data._id
@@ -11,11 +20,6 @@ Template.textarea.rendered = ->
     append: ""
   )
   editor = EditorCache.editors[@data.family]
-  @autorun ->
-    if element isnt document.activeElement
-      object = editor.collection.findOne(_id)
-      value = object[property]
-      $element.val(value)
   if editor.isEditedProperty(@data._id, @data.property)
     $activeElement = $(document.activeElement)
     if $element.get(0) isnt document.activeElement and (not $activeElement.closest("textarea, input").length or $activeElement.attr("data-family") and $activeElement.attr("data-family") is $element.attr("data-family"))
