@@ -14,8 +14,9 @@ accounts-google
 service-configuration
 meteorhacks:fast-render
 matb33:collection-hooks
+percolate:migrations
 percolatestudio:percolatestudio-mixpanel
-percolatestudio:percolatestudio-migrations
 email
 accounts-password
 force-ssl
+dburles:spacebars-tohtml

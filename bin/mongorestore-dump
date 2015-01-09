@@ -10,4 +10,4 @@ OUT_DIR="/tmp"
 
 rm -rf $OUT_DIR/$DB/meteor_accounts_loginServiceConfiguration*
 $DIRNAME/reload
-mongorestore --drop -h 127.0.0.1:3002 --db meteor $OUT_DIR/$DB
+mongorestore --drop -h 127.0.0.1:3001 --db meteor $OUT_DIR/$DB
