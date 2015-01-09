@@ -44,6 +44,8 @@ Feedbacks.before.insert (userId, feedback) ->
   true
 
 Feedbacks.after.insert (userId, feedback) ->
+  if feedback.isFixture
+    return
   transformedFeedback = share.Transformations.feedback(feedback)
   for accessibleByUserId in transformedFeedback.accessibleBy
     user = Meteor.users.findOne(accessibleByUserId)

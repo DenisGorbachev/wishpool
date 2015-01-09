@@ -19,14 +19,17 @@ Pings.before.insert (userId, ping) ->
     createdAt: now
   )
   pingPreSave.call(@, userId, ping)
-  if ping.isNew isnt false
-    Email.send(
-      to: "denis.d.gorbachev@gmail.com",
-      from: "\"Wishpool\" <hello@mail.wishpool.me>",
-      subject: "Ping from " + ping.hostname,
-      text: "Ping from " + ping.hostname
-    )
   true
+
+Pings.after.insert (userId, ping) ->
+  if ping.isFixture
+    return
+  Email.send(
+    to: "denis.d.gorbachev@gmail.com",
+    from: "\"Wishpool\" <hello@mail.wishpool.me>",
+    subject: "Ping from " + ping.hostname,
+    text: "Ping from " + ping.hostname
+  )
 
 Pings.before.update (userId, ping, fieldNames, modifier, options) ->
   now = new Date()

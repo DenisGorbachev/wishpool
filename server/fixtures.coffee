@@ -7,6 +7,7 @@ insertData = (data, collection) ->
     for _id, object of data
       object._id = _id
       object.isNew = false
+      object.isFixture = true
       collection.insert(object)
     return true
 
