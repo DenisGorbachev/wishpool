@@ -50,7 +50,7 @@ Feedbacks.after.insert (userId, feedback) ->
     Email.send(
       to: user.emails[0].address,
       from: "\"Wishpool\" <hello@mail.wishpool.me>",
-      subject: feedback.text + " (via Wishpool)",
+      subject: feedback.text,
       html: Spacebars.toHTML({feedback: transformedFeedback, settings: Meteor.settings}, Assets.getText("emails/newFeedback.html"))
     )
 
