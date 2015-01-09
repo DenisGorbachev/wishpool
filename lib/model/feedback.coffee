@@ -45,14 +45,14 @@ Feedbacks.before.insert (userId, feedback) ->
 
 Feedbacks.after.insert (userId, feedback) ->
   transformedFeedback = share.Transformations.feedback(feedback)
-  widget = transformedFeedback.widget()
-  owner = Meteor.users.findOne(widget.ownerId)
-  Email.send(
-    to: owner.emails[0].address,
-    from: "\"Wishpool\" <hello@mail.wishpool.me>",
-    subject: feedback.text + " (via Wishpool)",
-    html: Spacebars.toHTML({feedback: transformedFeedback, settings: Meteor.settings}, Assets.getText("emails/newFeedback.html"))
-  )
+  for accessibleByUserId in transformedFeedback.accessibleBy
+    user = Meteor.users.findOne(accessibleByUserId)
+    Email.send(
+      to: user.emails[0].address,
+      from: "\"Wishpool\" <hello@mail.wishpool.me>",
+      subject: feedback.text + " (via Wishpool)",
+      html: Spacebars.toHTML({feedback: transformedFeedback, settings: Meteor.settings}, Assets.getText("emails/newFeedback.html"))
+    )
 
 Feedbacks.before.update (userId, feedback, fieldNames, modifier, options) ->
   now = new Date()
