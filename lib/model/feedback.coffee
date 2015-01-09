@@ -49,7 +49,7 @@ Feedbacks.after.insert (userId, feedback) ->
   owner = Meteor.users.findOne(widget.ownerId)
   Email.send(
     to: owner.emails[0].address,
-    from: "hello@mail.wishpool.me",
+    from: "\"Wishpool\" <hello@mail.wishpool.me>",
     subject: feedback.text + " (via Wishpool)",
     html: Spacebars.toHTML({feedback: transformedFeedback, settings: Meteor.settings}, Assets.getText("emails/newFeedback.html"))
   )
