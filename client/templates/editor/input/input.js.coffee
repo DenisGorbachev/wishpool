@@ -9,6 +9,8 @@ Template.input.helpers
     if not element or element isnt document.activeElement
       editor = EditorCache.editors[@family]
       object = editor.collection.findOne(@_id)
+      if not object # happens when logging in for the first time, or logging out anytime
+        return
       object[@property]
     else
       $element.val()

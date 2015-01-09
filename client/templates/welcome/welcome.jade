@@ -2,7 +2,7 @@ template(name="welcome")
   .welcome
     main#top.masthead.color1(role='main')
       a.scrollto(href='#explore')
-        p WANT HIGHER CONVERSIONS?
+        p.hidden-xs WANT HIGHER CONVERSIONS?
         p.scrollto--arrow
           img(src='/images/scroll_down.png', alt='scroll down arrow')
       .header
@@ -14,13 +14,17 @@ template(name="welcome")
         h3
           | Capture the smallest
           span.typed
+          br.visible-xs
           | with micro-feedback widget:
         section.breath.row
           .wishpool-container
             iframe(src='{{Settings.public.widgetUrl}}/BigBrother?userName=&userEmail=&userAvatarUrl=&userIsPaying=&userId=', frameborder='0', scrolling='no', allowtransparency='yes', style='display: block; margin: 0 auto; width: 100%; height: 40px;')
-        .row
+        .normal.row
           .col-md-6.col-sm-12.col-md-offset-3.text-center
-            button.btn.btn-success.btn-large.login-with-google(type='submit') Install Wishpool On Your Site
+            .hidden-xs
+              button.btn.btn-success.btn-large.login-with-google(type='submit') Install Wishpool On Your Site
+            .visible-xs
+              button.btn.btn-success.btn-large.login-with-google(type='submit') Install Wishpool
     #explore.container
       .section-title
         h2 Understand New Users
@@ -30,13 +34,19 @@ template(name="welcome")
             img(src='/images/clock.png')
             .caption
               h3 They have no time for chat/surveys
-              p New users haven't invested enough in your app.<br>If they don't like it, they will leave without notice.
+              p
+                | New users haven't invested enough in your app.
+                br.hidden-xs
+                | If they don't like it, they will leave without notice.
         .col-sm-6.col-md-4
           .thumbnail
             img(src='/images/browser.png')
             .caption
               h3 They are super-sensitive to details
-              p New users navigate your app like a maze.<br>Even minor hiccups break the flow.
+              p
+                | New users navigate your app like a maze.
+                br.hidden-xs
+                | Even minor hiccups break the flow.
       .section-title
         h2 Take Advantage Of Micro-Feedback
       section.row.features
@@ -74,7 +84,10 @@ template(name="welcome")
               .billing A/B testing
               .billing Capture unsent feedback
             .zephyr
-              button.btn.btn-success.btn-large.login-with-google(type='submit') Sign in with Google
+              .hidden-xs
+                button.btn.btn-success.btn-large.login-with-google(type='submit') Sign in with Google
+              .visible-xs
+                button.btn.btn-success.btn-large.login-with-google(type='submit') Sign in
     .highlight.testimonials
       .container
         .section-title
@@ -124,7 +137,10 @@ template(name="welcome")
           | Get Different Customer Feedback
         .row
           .col-md-12.text-center
-            button.btn.btn-success.btn-large.login-with-google(type='submit') Sign in with Google
+            .hidden-xs
+              button.btn.btn-success.btn-large.login-with-google(type='submit') Sign in with Google
+            .visible-xs
+              button.btn.btn-success.btn-large.login-with-google(type='submit') Sign in
     .container
       section.row.breath
         .col-md-12

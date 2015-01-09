@@ -48,6 +48,10 @@ Router.onAfterAction ->
 Router.onAfterAction ->
   share.debouncedSendPageview()
 
+Router.onRun -> # try fixing the lagging scroll issue when logging in from mobile devices while having already scrolled down the page
+  $(window).scrollTop(0)
+  @next()
+
 share.setPageTitle = (title, appendSiteName = true) ->
   if appendSiteName
     title += " - Wishpool"

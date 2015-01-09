@@ -19,6 +19,11 @@
     position: relative;
     top 50%
     transform translateY(-50%)
+    padding-left 14px
+    padding-right 14px
+    .normal.row // .breath.row has its own styles
+      margin-left -14px
+      margin-right -14px
   .scrollto
     position: absolute;
     bottom: 5px;
@@ -26,13 +31,16 @@
     transform: translateX(-50%);
     &:hover
       text-decoration underline
+    .scrollto--arrow
+      margin 0
 
 .masthead, .footercta
   h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
     color #ffffff
+    line-height 1.2
 
 .wishpool-container
-  width 500px
+  max-width 500px
   margin 0 auto
 
 .competitor-pricing
@@ -45,6 +53,14 @@
   .masthead
     h1 a
       font-size 52px
+  .welcome
+    .section-title
+      margin-top 30px !important
+    h1, h2, .h1, .h2
+      font-size 26px !important
+    .features
+      margin-left -14px !important
+      margin-right -14px !important
 
 /**
  * iPad with portrait orientation.

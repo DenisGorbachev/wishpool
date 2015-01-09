@@ -1,5 +1,6 @@
 @LoginCallback = (error) ->
     if error then throw error
+    $(window).scrollTop(0) # cause, you know, that's the most logical thing to do after logging the user in
     user = Meteor.user()
     modifier = {}
     $set = {}

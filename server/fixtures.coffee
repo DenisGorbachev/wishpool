@@ -47,13 +47,7 @@ share.loadFixtures = ->
     "BigBrother":
       name: "Wishpool: Main Page"
       label: "I wish this page"
-      placeholder: "had a quick search button"
-      iframeCss: """
-        height: 36px;
-        width: 400px;
-        margin: 0 auto;
-        display: block;
-      """
+      placeholder: "were mobile-friendly"
       css: """
         .btn-success {
           background-color: #2ecc71;
