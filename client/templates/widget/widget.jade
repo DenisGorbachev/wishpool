@@ -5,7 +5,20 @@ template(name="widget")
         .col-xs-12.col-md-6
           .panel.panel-default
             .panel-heading
-              h4 Step 1. Customize your widget
+              h4 Step 1. Install the widget on your site
+            .panel-body
+              .preview.well
+                // Add scaling if possible
+                | {{{code}}}
+              form(role="form")
+              .form-group
+                +textarea(family="widget" _id=_id property="code" placeholder="Widget code" rows="4" cls="code" isNew=isNew)
+              button.btn.btn-success.copy-to-clipboard(type="button") Copy to clipboard
+              | &nbsp; and paste on your site
+        .col-xs-12.col-md-6
+          .panel.panel-default
+            .panel-heading
+              h4 Step 2. Customize your widget
             .panel-body
               form
               .form-group
@@ -15,33 +28,20 @@ template(name="widget")
               .form-group
                 +input(family="widget" _id=_id property="placeholder" placeholder="had better graphics" isNew=isNew)
               .form-group
-                .input-group
-                  span.input-group-btn.btn-group-sm
-                    button.set-button-icon.btn.btn-default.fa.fa-paper-plane(class="{{#if condition buttonIcon 'is' 'fa fa-paper-plane'}}active{{/if}}" data-button-icon="fa fa-paper-plane")
-                    button.set-button-icon.btn.btn-default.fa.fa-check(class="{{#if condition buttonIcon 'is' 'fa fa-check'}}active{{/if}}" data-button-icon="fa fa-check")
-                    button.set-button-icon.btn.btn-default.fa.fa-reply(class="{{#if condition buttonIcon 'is' 'fa fa-reply'}}active{{/if}}" data-button-icon="fa fa-reply")
-                    button.set-button-icon.btn.btn-default.fa.fa-rocket(class="{{#if condition buttonIcon 'is' 'fa fa-rocket'}}active{{/if}}" data-button-icon="fa fa-rocket")
-                    button.set-button-icon.btn.btn-default(style="margin-right:10px; max-width:inherit;" class="{{#if condition buttonIcon 'is' ''}}active{{/if}}" data-button-icon="") Text only
-                  +input(family="widget" _id=_id property="buttonText" placeholder="Catchy button text" isNew=isNew)
+                .btn-group.btn-group-sm
+                  button.set-button-icon.btn.btn-default.fa.fa-paper-plane(class="{{#if condition buttonIcon 'is' 'fa fa-paper-plane'}}active{{/if}}" data-button-icon="fa fa-paper-plane")
+                  button.set-button-icon.btn.btn-default.fa.fa-check(class="{{#if condition buttonIcon 'is' 'fa fa-check'}}active{{/if}}" data-button-icon="fa fa-check")
+                  button.set-button-icon.btn.btn-default.fa.fa-reply(class="{{#if condition buttonIcon 'is' 'fa fa-reply'}}active{{/if}}" data-button-icon="fa fa-reply")
+                  button.set-button-icon.btn.btn-default.fa.fa-rocket(class="{{#if condition buttonIcon 'is' 'fa fa-rocket'}}active{{/if}}" data-button-icon="fa fa-rocket")
+                  button.set-button-icon.btn.btn-default(style="margin-right:10px; max-width:inherit;" class="{{#if condition buttonIcon 'is' ''}}active{{/if}}" data-button-icon="") Text only
+              .form-group
+                +input(family="widget" _id=_id property="buttonText" placeholder="Button text (optional)" isNew=isNew)
               .form-group
                 +textarea(family="widget" _id=_id property="css" placeholder="Custom CSS (hint: it's Bootstrap all the way down)" rows="6" cls="code" isNew=isNew)
-              .control-icons.dropdown
+              .control-icons.dropdown.pull-right
                 i.fa.fa-cog.dropdown-toggle(type='button', data-toggle='dropdown', aria-expanded='true')
                 ul.dropdown-menu(role='menu', aria-labelledby='dropdownMenu1')
                   li(role='presentation')
                     a.remove(role='menuitem', tabindex='-1', href='#', data-confirm='Delete widget "{{name}}"?')
                       i.fa.fa-trash-o
                       | Delete
-        .col-xs-12.col-md-6
-          .panel.panel-default
-            .panel-heading
-              h4 Step 2. Install on your site
-            .panel-body
-              .preview.well.well-lg
-                // Add scaling if possible
-                | {{{code}}}
-              form(role="form")
-              .form-group
-                +textarea(family="widget" _id=_id property="code" placeholder="Widget code" rows="4" cls="code" isNew=isNew)
-              button.btn.btn-success.copy-to-clipboard(type="button") Copy to clipboard
-              | &nbsp; and paste on your site
