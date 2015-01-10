@@ -33,7 +33,7 @@ Router.map ->
     onBeforeAction: ->
       Meteor.loginWithToken(@params.token)
       share.isAutologin = true
-      Router.go("home")
+      Router.go("index")
 
 Router.onBeforeAction ->
   if Meteor.userId()
