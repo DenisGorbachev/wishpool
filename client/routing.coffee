@@ -32,7 +32,7 @@ Router.map ->
     name: "autologin"
     onBeforeAction: ->
       Meteor.loginWithToken(@params.token)
-      Pintask.autologinDetected = true
+      share.isAutologin = true
       Router.go("home")
 
 Router.onBeforeAction ->
