@@ -15,5 +15,8 @@ Migrations.add
 Meteor.startup ->
   version = Migrations._list.length - 1
   control = Migrations._collection.findOne("control")
-  if not control or control.version < version # for suppressing redundant log messages
-    Migrations.migrateTo("latest")
+  if Meteor.settings.public.isDebug and not control
+    Migrations._collection.insert({_id: "control", "locked": false, "version": version})
+  else
+    if not control or control.version < version # for suppressing redundant log messages
+      Migrations.migrateTo("latest")
