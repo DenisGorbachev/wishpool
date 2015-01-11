@@ -9,11 +9,15 @@ share.Transformations.ping = _.partial(share.transform, Ping)
 )
 
 pingPreSave = (userId, changes) ->
+  if changes.url
+    uri = new URI(changes.url)
+    changes.hostname = uri.hostname() or changes.hostname or ""
 
 Pings.before.insert (userId, ping) ->
   ping._id = ping._id || Random.id()
   now = new Date()
   _.defaults(ping,
+    url: ""
     hostname: ""
     updatedAt: now
     createdAt: now
@@ -24,12 +28,14 @@ Pings.before.insert (userId, ping) ->
 Pings.after.insert (userId, ping) ->
   if ping.isFixture
     return
-  Email.send(
-    to: "denis.d.gorbachev@gmail.com",
-    from: "\"Wishpool\" <hello@mail.wishpool.me>",
-    subject: "Ping from " + ping.hostname,
-    text: "Ping from " + ping.hostname
-  )
+  pingsWithSameHostnameCount = Pings.find({hostname: ping.hostname}).count()
+  if pingsWithSameHostnameCount <= 1
+    Email.send(
+      to: "denis.d.gorbachev@gmail.com",
+      from: "\"Wishpool\" <hello@mail.wishpool.me>",
+      subject: "Ping from " + ping.hostname,
+      text: "Ping from " + ping.hostname
+    )
 
 Pings.before.update (userId, ping, fieldNames, modifier, options) ->
   now = new Date()

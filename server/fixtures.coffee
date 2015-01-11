@@ -108,6 +108,8 @@ share.loadFixtures = ->
   pings =
     "pintask.me":
       url: "https://pintask.me/board/gzbEShDhtf7Hz4qGM"
+    "localhost":
+      url: "http://localhost:3000/"
   insertData(pings, Pings)
 
   serviceConfigurations =

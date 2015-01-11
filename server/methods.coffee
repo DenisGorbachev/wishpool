@@ -2,10 +2,8 @@ Meteor.methods(
   "ping": (url) ->
     check(url, String)
     @unblock()
-    uri = new URI(url)
-    hostname = uri.hostname()
-    ping = Pings.findOne({hostname: hostname})
+    ping = Pings.findOne({url: url})
     if not ping
-      Pings.insert({hostname: hostname})
+      Pings.insert({url: url})
     true
 )
