@@ -1,5 +1,5 @@
 {
-  "baseUrl": "http://wishpool.me",
+  "baseUrl": "https://wishpool.me",
   "google": {
     "secret": ""
   },
@@ -10,6 +10,7 @@
   "public": {
     "version": "__VERSION__",
     "isDebug": false,
+    "widgetUrl": "https://widget.wishpool.me",
     "google": {
       "clientId": ""
     },
