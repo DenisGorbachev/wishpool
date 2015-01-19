@@ -22,6 +22,12 @@
   p:empty
     display none
 
+.feedback.active
+  .inline-link, .control-icons > *
+    color #ffffff
+    &:hover, &:focus, &:active
+      color #ffffff
+
 .feedback.list-group-item.is-open
   border-left-width 4px
   .list-group-item-heading
@@ -34,3 +40,7 @@ a.feedback.list-group-item
     background-color #ffffff
     .control-icons
       visibility visible
+
+a.feedback.active.list-group-item
+  &:hover, &:focus
+    background-color #2196f3

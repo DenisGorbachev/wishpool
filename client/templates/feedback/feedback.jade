@@ -1,5 +1,5 @@
 template(name="feedback")
-  a.feedback.list-group-item(href="#" class="{{#if isOpen}}is-open{{/if}}")
+  a.feedback.list-group-item(id=_id class="{{#if isActive}}active{{/if}} {{#if isOpen}}is-open{{/if}}" href="#")
     p.list-group-item-heading
       .control-icons.pull-right
         span.toggle-is-starred.fa.fa-lg.fa-fw(class="{{#if isStarred}}fa-star{{else}}fa-star-o{{/if}}" title="{{#if isStarred}}Unstar{{else}}Star{{/if}}")

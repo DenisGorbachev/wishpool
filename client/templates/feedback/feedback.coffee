@@ -1,4 +1,6 @@
 Template.feedback.helpers
+  isActive: ->
+    location.hash is "#" + @_id
   isOpen: ->
     Session.equals("feedback-" + @_id + "-is-open", true)
   parentUrlCast: ->
@@ -7,6 +9,8 @@ Template.feedback.helpers
     encodeURIComponent("RE: " + @text)
 
 Template.feedback.rendered = ->
+  if location.hash is "#" + @data._id
+    Session.set("feedback-" + @data._id + "-is-open", true)
 
 Template.feedback.events
   "click .feedback": encapsulate (event, template) ->

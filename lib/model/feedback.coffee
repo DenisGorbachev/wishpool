@@ -3,6 +3,12 @@ class Feedback
     _.extend(@, doc)
   widget: ->
     Widgets.findOne(@widgetId)
+  replyTo: ->
+    if @sourceUserEmail
+      '"' + @sourceUserName + '"' + ' <' + @sourceUserEmail + '>'
+    else
+      '"Wishpool" <hello@mail.wishpool.me>'
+
 
 share.Transformations.feedback = _.partial(share.transform, Feedback)
 
@@ -44,14 +50,15 @@ Feedbacks.before.insert (userId, feedback) ->
   true
 
 Feedbacks.after.insert (userId, feedback) ->
-  if feedback.isFixture
+  if feedback.isFixture or feedback.widgetId in ["BigBrother"]
     return
   transformedFeedback = share.Transformations.feedback(feedback)
   for accessibleByUserId in transformedFeedback.accessibleBy
     user = Meteor.users.findOne(accessibleByUserId)
     Email.send(
       to: user.emails[0].address,
-      from: "\"Wishpool\" <hello@mail.wishpool.me>",
+      from: '"Wishpool" <hello@mail.wishpool.me>',
+      replyTo: transformedFeedback.replyTo()
       subject: feedback.text,
       html: Spacebars.toHTML({feedback: transformedFeedback, settings: Meteor.settings}, Assets.getText("emails/newFeedback.html"))
     )
