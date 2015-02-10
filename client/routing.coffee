@@ -47,8 +47,7 @@ Router.onBeforeAction ->
   else
     @render(null, {to: "header"})
     @render("welcome")
-, except: ["features"]
-, except: ["contactus"]
+, except: ["features", "contactus"]
 
 Router.onAfterAction ->
   share.setPageTitle("Wishpool = Instant customer feedback with ♥", false)
