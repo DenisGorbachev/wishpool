@@ -14,6 +14,9 @@ Router.map ->
         new: Feedbacks.find({isArchived: false, isStarred: false}, {sort: {createdAt: -1}})
         archived: Feedbacks.find({isArchived: true, isStarred: false}, {sort: {createdAt: -1}})
       }
+  @route "contactus",
+    path: "/contactus"
+    layoutTemplate: "cleanLayout"
   @route "features",
     path: "/features"
     layoutTemplate: "cleanLayout"
@@ -45,6 +48,7 @@ Router.onBeforeAction ->
     @render(null, {to: "header"})
     @render("welcome")
 , except: ["features"]
+, except: ["contactus"]
 
 Router.onAfterAction ->
   share.setPageTitle("Wishpool = Instant customer feedback with ♥", false)
