@@ -27,6 +27,7 @@ Feedbacks.before.insert (userId, feedback) ->
   widget = Widgets.findOne(widgetId)
   if not widget
     throw new Match.Error("Can't find widget #" + widgetId)
+  feedback.parentUrl = sourceParameters.url or feedback.parentUrl
   _.defaults(feedback,
     text: ""
     label: widget.label
