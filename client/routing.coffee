@@ -14,6 +14,8 @@ Router.map ->
         new: Feedbacks.find({isArchived: false, isStarred: false}, {sort: {createdAt: -1}})
         archived: Feedbacks.find({isArchived: true, isStarred: false}, {sort: {createdAt: -1}})
       }
+  @route "features",
+    path: "/features"
   @route "domainAdd",
     path: "/domain/add"
   @route "domain",
