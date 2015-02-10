@@ -28,7 +28,8 @@ template(name="welcome")
             | Learn what users really want with a feedback widget. Wishpool helps you uncover customer insights that lead to better business results.
           .cta.animated.fadeInDown
             a.button-outline(href='features.html') View 30 second demo
-            a.button(href='signup.html') Sign up free
+            ul.login-buttons-container
+              +loginButtons
             br
           .img
       #testimonials
