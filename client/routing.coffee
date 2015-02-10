@@ -16,6 +16,7 @@ Router.map ->
       }
   @route "features",
     path: "/features"
+    layoutTemplate: "cleanLayout"
   @route "domainAdd",
     path: "/domain/add"
   @route "domain",
@@ -43,12 +44,12 @@ Router.onBeforeAction ->
   else
     @render(null, {to: "header"})
     @render("welcome")
+, except: ["features"]
 
 Router.onAfterAction ->
   share.setPageTitle("Wishpool = Instant customer feedback with ♥", false)
 
-Router.onAfterAction ->
-  share.debouncedSendPageview()
+Router.onAfterAction share.sendPageview
 
 Router.onRun -> # try fixing the lagging scroll issue when logging in from mobile devices while having already scrolled down the page
   $(window).scrollTop(0)
