@@ -9,6 +9,7 @@ template(name="feedback")
       if sourceUserIsPaying
         span.text-warning(title="This is feedback from paying user") $&nbsp;
       | {{#if sourceUserName}}{{sourceUserName}}: {{/if}}{{text}}
+      | <span class="text-muted">(<span class="underlined">{{#if isOpen}}hide{{else}}show{{/if}} details</span>)</span>
     if isOpen
       .list-group-item-text
         //p.text-muted
