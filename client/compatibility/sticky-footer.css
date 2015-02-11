@@ -15,3 +15,7 @@ body {
   /* Set the fixed height of the footer here */
   height: 90px;
 }
+.welcome {
+  /* Offset for sticky footer */
+  margin-bottom: -90px;
+}
