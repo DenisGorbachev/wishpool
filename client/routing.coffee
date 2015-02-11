@@ -4,6 +4,7 @@ Router.configure
   loadingTemplate: "loading"
   yieldTemplates:
     "header": {to: "header"}
+    "footer": {to: "footer"}
 
 Router.map ->
   @route "index",
@@ -49,6 +50,7 @@ Router.onBeforeAction ->
     @next()
   else
     @render(null, {to: "header"})
+    @render(null, {to: "footer"})
     @render("welcome")
 , except: ["features", "contactus", "signup"]
 

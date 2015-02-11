@@ -10,6 +10,9 @@ UI.registerHelper("Router", ->
   Router
 )
 
+UI.registerHelper "currentUserId", ->
+  Meteor.userId()
+
 UI.registerHelper("condition", (v1, operator, v2, options) ->
   switch operator
     when "==", "eq", "is"
@@ -46,4 +49,12 @@ UI.registerHelper("momentFromNow", (date) ->
 
 UI.registerHelper("encodeURIComponent", (value) ->
   encodeURIComponent(value)
+)
+
+UI.registerHelper("currentUserEmail", ->
+  Meteor.user().emails[0].address
+)
+
+UI.registerHelper("currentUrl", ->
+  location.protocol + "//" + location.hostname + (if location.port then ':' + location.port else '') + Iron.Location.get().path
 )
