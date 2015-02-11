@@ -5,20 +5,7 @@ template(name="widget")
         .col-xs-12.col-md-6
           .panel.panel-default
             .panel-heading
-              h4 Step 1. Install the widget on your site
-            .panel-body
-              .preview.well
-                // Add scaling if possible
-                | {{{code}}}
-              form(role="form")
-              .form-group
-                +textarea(family="widget" _id=_id property="code" placeholder="Widget code" rows="4" cls="code" isNew=isNew)
-              button.btn.btn-success.copy-to-clipboard(type="button") Copy to clipboard
-              | &nbsp; and paste on your site
-        .col-xs-12.col-md-6
-          .panel.panel-default
-            .panel-heading
-              h4 Step 2. Customize your widget
+              h4 Step 1. Customize your widget
             .panel-body
               form
               .form-group
@@ -45,3 +32,16 @@ template(name="widget")
                     a.remove(role='menuitem', tabindex='-1', href='#', data-confirm='Delete widget "{{name}}"?')
                       i.fa.fa-trash-o
                       | Delete
+        .col-xs-12.col-md-6
+          .panel.panel-default
+            .panel-heading
+              h4 Step 2. Install the widget on your site
+            .panel-body
+              .preview.well
+                // Add scaling if possible
+                | {{{code}}}
+              form(role="form")
+              .form-group
+                +textarea(family="widget" _id=_id property="code" placeholder="Widget code" rows="4" cls="code" isNew=isNew)
+              button.btn.btn-success.copy-to-clipboard(type="button") Copy to clipboard
+              | &nbsp; and paste on your site
