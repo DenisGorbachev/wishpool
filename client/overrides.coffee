@@ -1,4 +1,5 @@
 Template._loginButtonsLoggedOutDropdown.rendered = ->
+  Accounts._loginButtonsSession.set("inSignupFlow", true)
   $a = @$("a.dropdown-toggle")
   $dropdown = $a.closest(".dropdown")
   $dropdown.find(".btn-Google").addClass("btn-lg")
