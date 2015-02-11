@@ -32,7 +32,7 @@ Widgets.before.insert (userId, widget) ->
     css: """
       /* Add your brand colors */
       .btn-success {
-        
+
       }
       .btn-success:hover, .btn-success:active {
 
