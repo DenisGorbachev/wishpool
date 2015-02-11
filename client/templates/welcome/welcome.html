@@ -19,7 +19,8 @@
         </div>
       </header>
       <div id="hero">
-        <div class="container"><h1 class="hero-text animated fadeInDown">Get more feedback about<br/> your app or website.</h1>
+        <div class="container">
+          <h1 class="hero-text animated fadeInDown">Get more feedback about<br /> your app or website.</h1>
           <p class="sub-text animated fadeInDown">Learn what users really want with a feedback widget. Wishpool helps you uncover customer insights that lead to better business results.</p>
           <div class="cta animated fadeInDown">
             <a href="/features" class="button-outline">View 30 second demo</a>
@@ -72,32 +73,31 @@
       </div>
       <div id="features">
         <div class="container">
-
-            <div id="second-option">
-                <div class="container">
-                    <div class="row">
-                        <div class="row header">
-                            <div class="col-md-12 nutshell"><h2>Wishpool in a nutshell.</h2>
-                            </div>
-                        </div>
-                        <div class="col-md-4 feature whatwhyhow">
-                            <i class="fa fa-question-circle fa-3x"></i>
-                            <strong>What?</strong>
-                            <p>Get more insightful feedback about your app or website with a feedback widget.</p>
-                        </div>
-                        <div class="col-md-4 feature whatwhyhow">
-                            <i class="fa fa-line-chart fa-3x"></i>
-                            <strong>Why?</strong>
-                            <p>Learn what your users want so you can improve your product and increase revenue.</p>
-                        </div>
-                        <div class="col-md-4 feature whatwhyhow">
-                            <i class="fa fa-code fa-3x"></i>
-                            <strong>How?</strong>
-                            <p>Create a widget and place it onto each page you want to collect feedback from.</p>
-                        </div>
-                    </div>
+          <div id="second-option">
+            <div class="container">
+              <div class="row">
+                <div class="row header">
+                  <div class="col-md-12 nutshell"><h2>Wishpool in a nutshell.</h2>
+                  </div>
                 </div>
+                <div class="col-md-4 feature whatwhyhow">
+                  <i class="fa fa-question-circle fa-3x"></i>
+                  <strong>What?</strong>
+                  <p>Get more insightful feedback about your app or website with a feedback widget.</p>
+                </div>
+                <div class="col-md-4 feature whatwhyhow">
+                  <i class="fa fa-line-chart fa-3x"></i>
+                  <strong>Why?</strong>
+                  <p>Learn what your users want so you can improve your product and increase revenue.</p>
+                </div>
+                <div class="col-md-4 feature whatwhyhow">
+                  <i class="fa fa-code fa-3x"></i>
+                  <strong>How?</strong>
+                  <p>Create a widget and place it onto each page you want to collect feedback from.</p>
+                </div>
+              </div>
             </div>
+          </div>
           <div class="row header">
             <div class="col-md-12"><h2>Know your users needs.</h2>
               <p>Understand and act on user requests to unlock growth.</p></div>
@@ -127,7 +127,11 @@
       <div id="cta">
         <div class="container">
           <div class="cta"><p>Try Wishpool for 30 days free. Then only $79/month.</p>
-            <a href="signup.html" class="button">Sign up free</a><p class="nocredit">No credit card required.</p><br />
+            <ul class="login-buttons-container">
+              {{> loginButtons type="HeroButton"}}
+            </ul>
+            <p class="nocredit">No credit card required.</p>
+            <br />
             <div class="col-md-8 col-md-offset-2">
               <iframe src="https://widget.wishpool.me/b2Ea7JkduJkHkQgsM?userName=&amp;userEmail=&amp;userAvatarUrl=&amp;userIsPaying=&amp;userId=" frameborder="0" scrolling="no" allowtransparency="yes" style="display: block; margin: 0 auto; width: 100%; height: 40px;"></iframe>
             </div>

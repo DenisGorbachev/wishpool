@@ -18,6 +18,10 @@ Template._loginButtonsLoggedOutDropdown.rendered = ->
       $a.addClass("button")
       $a.find(".caret").remove()
       $a.text("Sign up free")
+    when "SmallButton"
+      $a.addClass("button small-button")
+      $a.find(".caret").remove()
+      $a.text("Sign up free")
     when "NavbarLink"
       $a.text("Login")
     else
