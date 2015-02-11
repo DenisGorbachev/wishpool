@@ -16,3 +16,7 @@ window.fbAsyncInit = ->
 ZeroClipboard.config(
   swfPath: "/ZeroClipboard.swf"
 )
+
+share.autologinDetected = false
+share.isAutologin = ->
+  share.autologinDetected or location.href.indexOf("/autologin") isnt -1

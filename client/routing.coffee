@@ -41,7 +41,7 @@ Router.map ->
     name: "autologin"
     onBeforeAction: ->
       Meteor.loginWithToken(@params.token)
-      share.isAutologin = true
+      share.autologinDetected = true
       Router.go("index")
 
 Router.onBeforeAction ->
