@@ -19,7 +19,8 @@
         </div>
       </header>
       <div id="hero">
-        <div class="container"><h1 class="hero-text animated fadeInDown">Get more feedback about<br/> your app or website.</h1>
+        <div class="container">
+          <h1 class="hero-text animated fadeInDown">Get more feedback about<br /> your app or website.</h1>
           <p class="sub-text animated fadeInDown">Learn what users really want with a feedback widget. Wishpool helps you uncover customer insights that lead to better business results.</p>
           <div class="cta animated fadeInDown">
             <a href="/features" class="button-outline">View 30 second demo</a>
@@ -48,7 +49,7 @@
                     <div class="arrow-border"></div>
                   </div>
                 </div>
-                <div class="author"><img src="https://wishpool.me/images/emily.jpg" alt="testimonial1" class="pic" />
+                <div class="author"><img src="/images/emily.jpg" alt="testimonial1" class="pic" />
                   <div class="name">Emily Sporl</div>
                   <div class="company">Product Marketing Manager</div>
                   <div class="company">Cisco</div>
@@ -63,7 +64,7 @@
                     <div class="arrow-border"></div>
                   </div>
                 </div>
-                <div class="author"><img src="https://wishpool.me/images/alice.jpg" alt="testimonial2" class="pic" />
+                <div class="author"><img src="/images/alice.jpg" alt="testimonial2" class="pic" />
                   <div class="name">Alice Default</div>
                   <div class="company">Growth and Marketing</div>
                   <div class="company">Front App</div>
@@ -75,32 +76,31 @@
       </div>
       <div id="features">
         <div class="container">
-
-            <div id="second-option">
-                <div class="container">
-                    <div class="row">
-                        <div class="row header">
-                            <div class="col-md-12 nutshell"><h2>Wishpool in a nutshell.</h2>
-                            </div>
-                        </div>
-                        <div class="col-md-4 feature whatwhyhow">
-                            <i class="fa fa-question-circle fa-3x"></i>
-                            <strong>What?</strong>
-                            <p>Get more insightful feedback about your app or website with a feedback widget.</p>
-                        </div>
-                        <div class="col-md-4 feature whatwhyhow">
-                            <i class="fa fa-line-chart fa-3x"></i>
-                            <strong>Why?</strong>
-                            <p>Learn what your users want so you can improve your product and increase revenue.</p>
-                        </div>
-                        <div class="col-md-4 feature whatwhyhow">
-                            <i class="fa fa-code fa-3x"></i>
-                            <strong>How?</strong>
-                            <p>Create a widget and place it onto each page you want to collect feedback from.</p>
-                        </div>
-                    </div>
+          <div id="second-option">
+            <div class="container">
+              <div class="row">
+                <div class="row header">
+                  <div class="col-md-12 nutshell"><h2>Wishpool in a nutshell.</h2>
+                  </div>
                 </div>
+                <div class="col-md-4 feature whatwhyhow">
+                  <i class="fa fa-question-circle fa-3x"></i>
+                  <strong>What?</strong>
+                  <p>Get more insightful feedback about your app or website with a feedback widget.</p>
+                </div>
+                <div class="col-md-4 feature whatwhyhow">
+                  <i class="fa fa-line-chart fa-3x"></i>
+                  <strong>Why?</strong>
+                  <p>Learn what your users want so you can improve your product and increase revenue.</p>
+                </div>
+                <div class="col-md-4 feature whatwhyhow">
+                  <i class="fa fa-code fa-3x"></i>
+                  <strong>How?</strong>
+                  <p>Create a widget and place it onto each page you want to collect feedback from.</p>
+                </div>
+              </div>
             </div>
+          </div>
           <div class="row header">
             <div class="col-md-12"><h2>Know your users needs.</h2>
               <p>Understand and act on user requests to unlock growth.</p></div>
@@ -110,29 +110,33 @@
               <p>At the core of every great company, is a great product. A product that users love!
                 Allow your users to tell you what they want. Start building new features with user requests instead of guesses.</p>
             </div>
-            <div class="col-md-6 image"><img src="images/feature1.png" alt="feature1" class="img-responsive" /></div>
+            <div class="col-md-6 image"><img src="/images/feature1.png" alt="feature1" class="img-responsive" /></div>
           </div>
           <div class="divider"></div>
           <div class="row feature backwards">
             <div class="col-md-6 info"><h4>Improve user experience.</h4>
               <p>What if your users could just tell you what they wanted? Do they wish your page was responsive? Do they want to invite friends? Give your customers a voice, let them tell you.</p>
             </div>
-            <div class="col-md-6 image"><img src="images/feature2.png" alt="feature2" class="img-responsive" /></div>
+            <div class="col-md-6 image"><img src="/images/feature2.png" alt="feature2" class="img-responsive" /></div>
           </div>
           <div class="row feature">
             <div class="col-md-6 info"><h4>Increase retention rate.</h4>
               <p>It's impossible to create a high growth company with a leaky funnel. Decrease churn by uncovering what your users need to stick around.</p>
             </div>
-            <div class="col-md-6 image"><img src="images/feature1.png" alt="feature1" class="img-responsive" /></div>
+            <div class="col-md-6 image"><img src="/images/feature1.png" alt="feature1" class="img-responsive" /></div>
           </div>
         </div>
       </div>
       <div id="cta">
         <div class="container">
           <div class="cta"><p>Try Wishpool for 30 days free. Then only $79/month.</p>
-            <a href="signup.html" class="button">Sign up free</a><p class="nocredit">No credit card required.</p><br />
+            <ul class="login-buttons-container">
+              {{> loginButtons type="HeroButton"}}
+            </ul>
+            <p class="nocredit">No credit card required.</p>
+            <br />
             <div class="col-md-8 col-md-offset-2">
-              <iframe src="https://widget.wishpool.me/b2Ea7JkduJkHkQgsM?userName=&amp;userEmail=&amp;userAvatarUrl=&amp;userIsPaying=&amp;userId=" frameborder="0" scrolling="no" allowtransparency="yes" style="display: block; margin: 0 auto; width: 100%; height: 40px;"></iframe>
+              <iframe src="{{Settings.public.widgetUrl}}/BigBrother" frameborder="0" scrolling="no" allowtransparency="yes" style="display: block; margin: 0 auto; width: 100%; height: 40px;"></iframe>
             </div>
           </div>
         </div>
@@ -143,7 +147,7 @@
             <div class="col-md-12"><h3>Build better products</h3>
               <p>These are companies that are using user feedback to build their products.</p>
               <div class="logos">
-                <img src="images/logos/google.png" /><img src="images/logos/facebook.png" /><img src="images/logos/apple.png" /><img src="images/logos/stripe.png" /><img src="images/logos/yahoo.png" />
+                <img src="/images/logos/google.png" /><img src="/images/logos/facebook.png" /><img src="/images/logos/apple.png" /><img src="/images/logos/stripe.png" /><img src="/images/logos/yahoo.png" />
               </div>
             </div>
           </div>

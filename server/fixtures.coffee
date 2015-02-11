@@ -46,15 +46,19 @@ share.loadFixtures = ->
   widgets =
     "BigBrother":
       name: "Wishpool: Main Page"
-      label: "I wish this page"
-      placeholder: "were mobile-friendly"
+      label: "Still not convinced?"
+      placeholder: "Tell us why"
+      buttonIcon: ""
+      buttonText: "Send feedback"
       css: """
+        /*
         .btn-success {
           background-color: #2ecc71;
         }
         .btn-success:hover, .btn-success:active {
           background-color: #29c36a;
         }
+        */
       """
       ownerId: "DenisGorbachev"
     "PintaskLandingPage":

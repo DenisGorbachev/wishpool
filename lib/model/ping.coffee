@@ -11,7 +11,9 @@ share.Transformations.ping = _.partial(share.transform, Ping)
 pingPreSave = (userId, changes) ->
   if changes.url
     uri = new URI(changes.url)
-    changes.hostname = uri.hostname() or changes.hostname or ""
+    fullHostname = uri.hostname() or changes.hostname or ""
+    rootHostname = fullHostname.split(".").slice(-2).join(".")
+    changes.hostname = rootHostname
 
 Pings.before.insert (userId, ping) ->
   ping._id = ping._id || Random.id()
@@ -28,8 +30,10 @@ Pings.before.insert (userId, ping) ->
 Pings.after.insert (userId, ping) ->
   if ping.isFixture
     return
-  pingsWithSameHostnameCount = Pings.find({hostname: ping.hostname}).count()
+  pingsWithSameHostnameCount = Pings.find({hostname: ping.hostname, widgetId: ping.widgetId}).count()
   if pingsWithSameHostnameCount <= 1
+    widget = Widgets.findOne(ping.widgetId)
+    mixpanel.track("Install", _.defaults({distinct_id: widget.ownerId}, ping))
     Email.send(
       to: "denis.d.gorbachev@gmail.com",
       from: "\"Wishpool\" <hello@mail.wishpool.me>",

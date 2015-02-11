@@ -29,7 +29,15 @@ Widgets.before.insert (userId, widget) ->
     placeholder: "had better graphics"
     buttonIcon: ""
     buttonText: "Send"
-    css: ""
+    css: """
+      /* Add your brand colors */
+      .btn-success {
+
+      }
+      .btn-success:hover, .btn-success:active {
+
+      }
+    """
     code: generateCode(generateUrl(widget._id) + generateQuery())
     ownerId: userId
     updatedAt: now
