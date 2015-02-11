@@ -27,8 +27,8 @@ Widgets.before.insert (userId, widget) ->
     name: ""
     label: "I wish this page"
     placeholder: "had better graphics"
-    buttonIcon: "fa fa-check"
-    buttonText: ""
+    buttonIcon: ""
+    buttonText: "Send"
     css: ""
     code: generateCode(generateUrl(widget._id) + generateQuery())
     ownerId: userId
