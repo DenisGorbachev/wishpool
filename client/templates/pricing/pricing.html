@@ -1,16 +1,39 @@
 <template name="pricing">
   <div class="welcome">
     <div id="pricing">
+        <header class="navbar navbar-inverse normal" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/" class="navbar-brand">Wishpool</a>
+                </div>
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/pricing">Pricing</a></li>
+                        <li><a href="/features">Use cases</a></li>
+                        <li><a href="/contactus">Contact</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right visible-md visible-lg">
+                      {{> loginButtons type="NavbarButton"}}
+                    </ul>
+                </nav>
+            </div>
+        </header>
       <div id="first-option">
         <div class="container">
           <div class="row header">
             <div class="col-md-12">
-              <h3>Give your users a voice</h3>
-              <p>Learn what your users want from your product</p>
+              <h3>Simple pricing</h3>
+              <p>Everything you need and just one plan to choose from.</p>
             </div>
           </div>
           <div class="row charts">
-            <div class="col-md-4">
+            <div class="col-md-4 col-md-offset-4">
               <div class="chart featured">
                 <div class="plan-name">Wishpool</div>
                 <div class="quantity">
@@ -19,6 +42,10 @@
                   <span class="period">/month</span>
                 </div>
                 <div class="specs">
+                    <div class="spec">
+                        <span class="variable">Unlimited</span>
+                        feedback widgets
+                    </div>
                   <div class="spec">
                     <span class="variable">Unlimited</span>
                     user request
@@ -35,17 +62,14 @@
                     <span class="variable">Insightful</span>
                     analytics
                   </div>
-                  <div class="spec">
-                    <span class="variable">0.5%</span>
-                    Transaction fee
-                  </div>
                 </div>
                 <a class="btn-signup button-clear" href="../../react-wrap%202/theme%20v1.2/signup.html">
                   <span>Start free trial</span>
-                  <p>No credit card required</p>
                 </a>
+                  <p>No credit card required</p>
               </div>
             </div>
+            <br>
             <div class="row faq">
               <div class="col-md-12">
                 <div class="row header">
@@ -90,10 +114,11 @@
             <div class="row contact">
               <div class="col-md-12">
                 <div class="wrapper clearfix">
-                  <h4>
+                  <h5>
                     <span class="brankic-phone2"></span>
-                    Have questions about Wishpool? Call us at <strong>1-800-123-4567</strong>
-                  </h4>
+                    Is there information missing that you'd like?
+                      <iframe src="https://widget.wishpool.me/TRFwquLthCiwt7ER9?userName=&userEmail=&userAvatarUrl=&userIsPaying=&userId=" frameborder="0" scrolling="no" allowtransparency="yes" style="display: block; margin: 0 auto; width: 100%; height: 40px;"></iframe>
+                  </h5>
                 </div>
               </div>
             </div>
