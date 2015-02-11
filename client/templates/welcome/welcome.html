@@ -12,7 +12,7 @@
               <li><a href="/">Home</a></li>
               <li><a href="/features">Use Cases</a></li>
               <li><a href="/contactus">Contact</a></li>
-              <li><a href="/signin">Login</a></li>
+              {{> loginButtons type="NavbarLink"}}
             </ul>
           </nav>
         </div>
@@ -23,7 +23,7 @@
           <div class="cta animated fadeInDown">
             <a href="/features" class="button-outline">View 30 second demo</a>
             <ul class="login-buttons-container">
-              {{> loginButtons}}
+              {{> loginButtons type="HeroButton"}}
             </ul>
             <br />
           </div>

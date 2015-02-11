@@ -1,8 +1,5 @@
 Template._loginButtonsLoggedOutDropdown.rendered = ->
   $a = @$("a.dropdown-toggle")
-  $a.addClass("button")
-  $a.find(".caret").remove()
-  $a.text("Sign up free")
   $dropdown = $a.closest(".dropdown")
   $dropdown.find(".btn-Google").addClass("btn-lg")
   $dropdown.on("click", (event) ->
@@ -11,8 +8,21 @@ Template._loginButtonsLoggedOutDropdown.rendered = ->
       event.stopPropagation()
       event.stopImmediatePropagation()
   )
-  $(".col-sm-12").addClass("col-xs-12").removeClass("col-sm-12")
+  switch @data.type
+    when "HeroButton"
+      $a.addClass("button")
+      $a.find(".caret").remove()
+      $a.text("Sign up free")
+    when "NavbarButton"
+      $a.addClass("button")
+      $a.find(".caret").remove()
+      $a.text("Sign up free")
+    when "NavbarLink"
+      $a.text("Login")
+    else
+      throw "Unknown button type #{@data.type}"
 
 #Blaze._reportException = (e, msg) ->
 #  console.log(msg)
 #  throw e
+
