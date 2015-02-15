@@ -37,8 +37,8 @@ Pings.after.insert (userId, ping) ->
     Email.send(
       to: "denis.d.gorbachev@gmail.com",
       from: "\"Wishpool\" <hello@mail.wishpool.me>",
-      subject: "Ping from " + ping.hostname,
-      text: "Ping from " + ping.hostname
+      subject: "Ping from #{ping.hostname} by #{widget.name} ##{widget._id}",
+      text: "Ping from #{ping.hostname} by #{widget.name} ##{widget._id}"
     )
 
 Pings.before.update (userId, ping, fieldNames, modifier, options) ->
