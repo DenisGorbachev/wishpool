@@ -17,7 +17,6 @@ percolate:migrations
 percolatestudio:percolatestudio-mixpanel
 email
 accounts-password
-force-ssl
 dburles:spacebars-tohtml
 ian:accounts-ui-bootstrap-3
 meteorhacks:npm
