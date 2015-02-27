@@ -81,15 +81,15 @@ share.loadFixtures = ->
     IWishThisPageHadBetterGraphics:
       text: "I wish this page had better graphics"
       parentUrl: "http://wishpool.me/"
-      sourceUrl: new URI("http://widget.wishpool.me/BigBrother").toString()
+      sourceUrl: new URI("https://widget.wishpool.me/BigBrother").toString()
     IWishYouHadBetterMarketing:
       text: "I wish you had better marketing"
       parentUrl: "http://wishpool.me/"
-      sourceUrl: new URI("http://widget.wishpool.me/BigBrother").toString()
+      sourceUrl: new URI("https://widget.wishpool.me/BigBrother").toString()
     IWishPintaskHadMobileVersion:
       text: "I wish Pintask had mobile version"
       parentUrl: "https://pintask.me/board/joJjt3kusPuiTtxjk"
-      sourceUrl: new URI("http://widget.wishpool.me/PintaskLandingPage").setQuery(
+      sourceUrl: new URI("https://widget.wishpool.me/PintaskLandingPage").setQuery(
         userName: "Анастасия Хохлова"
         userEmail: "honastena@pintask.me"
         userAvatarUrl: "/images/woman.png"
