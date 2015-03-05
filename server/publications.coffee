@@ -33,3 +33,7 @@ Meteor.publish("domains", ->
   if not @userId then return []
   Domains.find({accessibleBy: @userId}, {fields: {accessibleBy: 0}})
 )
+
+Meteor.publish("TokenEmails", (token) ->
+  TokenEmails.find({wishpoolOwnerToken: token}, {fields: {accessibleBy: 0, friendUserIds: 0}})
+)
