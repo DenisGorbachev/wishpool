@@ -1,10 +1,18 @@
 Feedbacks.allow
   insert: share.securityRulesWrapper (userId, feedback) ->
-    check(feedback,
-      text: String
-      parentUrl: Match.Url
-      sourceUrl: Match.Url
-    )
+    if feedback.email
+      check(feedback,
+        text: String
+        parentUrl: Match.Url
+        sourceUrl: Match.Url
+        email: Match.Email
+      )
+    else
+      check(feedback,
+        text: String
+        parentUrl: Match.Url
+        sourceUrl: Match.Url
+      )
     true
   update: share.securityRulesWrapper (userId, feedback, fieldNames, modifier, options) ->
     unless userId

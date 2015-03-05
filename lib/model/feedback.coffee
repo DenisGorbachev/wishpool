@@ -35,7 +35,7 @@ Feedbacks.before.insert (userId, feedback) ->
     parentUrl: "" # parent page
     sourceUrl: "" # iframe src
     sourceUserName: sourceParameters.userName or ""
-    sourceUserEmail: sourceParameters.userEmail or ""
+    sourceUserEmail: feedback.email or sourceParameters.userEmail or ""
     sourceUserAvatarUrl: (sourceParameters.userAvatarUrl not in ["undefined"] and sourceParameters.userAvatarUrl) or ""
     sourceUserIsPaying: sourceParameters.userIsPaying in ["true", "1", "yes", "of course"]
     sourceUserId: sourceParameters.userId or ""
