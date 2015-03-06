@@ -70,3 +70,22 @@ Feedbacks.before.update (userId, feedback, fieldNames, modifier, options) ->
   modifier.$set.updatedAt = modifier.$set.updatedAt or now
   feedbackPreSave.call(@, userId, modifier.$set || {})
   true
+
+
+Feedbacks.after.update (userId, feedback, fieldNames, modifier, options) ->
+  if feedback.isFixture or feedback.widgetId in ["BigBrother"]
+    return
+  if fieldNames.length is 1 and fieldNames[0] is 'sourceUserEmail'
+    transformedFeedback = share.Transformations.feedback(feedback)
+    for accessibleByUserId in transformedFeedback.accessibleBy
+      user = Meteor.users.findOne(accessibleByUserId)
+      Email.send(
+        to: user.emails[0].address,
+        from: '"Wishpool" <hello@mail.wishpool.me>',
+        replyTo: transformedFeedback.replyTo()
+        subject: feedback.text,
+        html: Spacebars.toHTML({feedback: transformedFeedback, settings: Meteor.settings}, Assets.getText("emails/newFeedback.html"))
+      )
+  true
+
+
