@@ -24,6 +24,13 @@ TokenEmails.before.insert (userId, TokenEmail) ->
   TokenEmailPreSave.call(@, userId, TokenEmail)
   true
 
+TokenEmails.after.insert (userId, tokenEmail) ->
+  transformedTokenEmail = share.Transformations.TokenEmail(tokenEmail)
+  feedbacks = Feedbacks.find({sourceUserToken: transformedTokenEmail.wishpoolOwnerToken}).fetch()
+  for feedback in feedbacks
+    Feedbacks.update({_id: feedback._id}, {$set: {sourceUserEmail: transformedTokenEmail.email, sourceUserToken: ""}})
+  true
+
 TokenEmails.before.update (userId, TokenEmail, fieldNames, modifier, options) ->
   modifier.$set = modifier.$set or {}
   TokenEmailPreSave.call(@, userId, modifier.$set)

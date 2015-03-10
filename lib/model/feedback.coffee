@@ -36,6 +36,7 @@ Feedbacks.before.insert (userId, feedback) ->
     sourceUrl: "" # iframe src
     sourceUserName: sourceParameters.userName or ""
     sourceUserEmail: feedback.email or sourceParameters.userEmail or ""
+    sourceUserToken: feedback.userToken or ""
     sourceUserAvatarUrl: (sourceParameters.userAvatarUrl not in ["undefined"] and sourceParameters.userAvatarUrl) or ""
     sourceUserIsPaying: sourceParameters.userIsPaying in ["true", "1", "yes", "of course"]
     sourceUserId: sourceParameters.userId or ""
@@ -75,7 +76,7 @@ Feedbacks.before.update (userId, feedback, fieldNames, modifier, options) ->
 Feedbacks.after.update (userId, feedback, fieldNames, modifier, options) ->
   if feedback.isFixture or feedback.widgetId in ["BigBrother"]
     return
-  if fieldNames.length is 1 and fieldNames[0] is 'sourceUserEmail'
+  if fieldNames.length is 3 and 'sourceUserEmail' in fieldNames
     transformedFeedback = share.Transformations.feedback(feedback)
     for accessibleByUserId in transformedFeedback.accessibleBy
       user = Meteor.users.findOne(accessibleByUserId)

@@ -11,7 +11,8 @@ Feedbacks.allow
       check(feedback,
         text: String
         parentUrl: Match.Url
-        sourceUrl: Match.Url
+        sourceUrl: Match.Url,
+        sourceUserToken: String
       )
     true
   update: share.securityRulesWrapper (userId, feedback, fieldNames, modifier, options) ->
@@ -19,7 +20,7 @@ Feedbacks.allow
       $set =
         sourceUserEmail: Match.Email
       check(modifier,
-        $set: $set # updatedAt is non-optional
+        $set: $set
       )
       true
     else
