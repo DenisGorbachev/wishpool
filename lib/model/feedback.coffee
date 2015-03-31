@@ -35,7 +35,8 @@ Feedbacks.before.insert (userId, feedback) ->
     parentUrl: "" # parent page
     sourceUrl: "" # iframe src
     sourceUserName: sourceParameters.userName or ""
-    sourceUserEmail: sourceParameters.userEmail or ""
+    sourceUserEmail: feedback.email or sourceParameters.userEmail or ""
+    sourceUserToken: feedback.userToken or ""
     sourceUserAvatarUrl: (sourceParameters.userAvatarUrl not in ["undefined"] and sourceParameters.userAvatarUrl) or ""
     sourceUserIsPaying: sourceParameters.userIsPaying in ["true", "1", "yes", "of course"]
     sourceUserId: sourceParameters.userId or ""
@@ -70,3 +71,22 @@ Feedbacks.before.update (userId, feedback, fieldNames, modifier, options) ->
   modifier.$set.updatedAt = modifier.$set.updatedAt or now
   feedbackPreSave.call(@, userId, modifier.$set || {})
   true
+
+
+Feedbacks.after.update (userId, feedback, fieldNames, modifier, options) ->
+  if feedback.isFixture or feedback.widgetId in ["BigBrother"]
+    return
+  if fieldNames.length is 3 and 'sourceUserEmail' in fieldNames
+    transformedFeedback = share.Transformations.feedback(feedback)
+    for accessibleByUserId in transformedFeedback.accessibleBy
+      user = Meteor.users.findOne(accessibleByUserId)
+      Email.send(
+        to: user.emails[0].address,
+        from: '"Wishpool" <hello@mail.wishpool.me>',
+        replyTo: transformedFeedback.replyTo()
+        subject: feedback.text,
+        html: Spacebars.toHTML({feedback: transformedFeedback, settings: Meteor.settings}, Assets.getText("emails/newFeedback.html"))
+      )
+  true
+
+
